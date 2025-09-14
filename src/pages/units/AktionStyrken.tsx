@@ -138,7 +138,7 @@ const AktionStyrken = () => {
               <p className="text-lg mb-6 opacity-95">
                 Bliv en del af vores absolutte elite enhed
               </p>
-              <Link to="/ansog">
+              <Link to="/ansog/aktions-styrken">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Ansøg Nu
                 </Button>

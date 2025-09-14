@@ -19,6 +19,14 @@ import ReaktionsPatruljen from "./pages/units/ReaktionsPatruljen";
 import CivilPatruljen from "./pages/units/CivilPatruljen";
 import AktionStyrken from "./pages/units/AktionStyrken";
 
+// Application pages
+import IndsatslederApply from "./pages/applications/IndsatslederApply";
+import HundeforerApply from "./pages/applications/HundeforerApply";
+import MotorcykelApply from "./pages/applications/MotorcykelApply";
+import ReaktionsApply from "./pages/applications/ReaktionsApply";
+import CivilApply from "./pages/applications/CivilApply";
+import AktionApply from "./pages/applications/AktionApply";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,6 +50,14 @@ const App = () => (
             <Route path="/enheder/reaktions-patruljen" element={<ReaktionsPatruljen />} />
             <Route path="/enheder/civil-patruljen" element={<CivilPatruljen />} />
             <Route path="/enheder/aktions-styrken" element={<AktionStyrken />} />
+            
+            {/* Application pages */}
+            <Route path="/ansog/indsatsleder" element={<IndsatslederApply />} />
+            <Route path="/ansog/hundeforer" element={<HundeforerApply />} />
+            <Route path="/ansog/motorcykel-betjent" element={<MotorcykelApply />} />
+            <Route path="/ansog/reaktions-patruljen" element={<ReaktionsApply />} />
+            <Route path="/ansog/civil-patruljen" element={<CivilApply />} />
+            <Route path="/ansog/aktions-styrken" element={<AktionApply />} />
             
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

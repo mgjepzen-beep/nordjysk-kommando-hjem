@@ -136,7 +136,7 @@ const CivilPatruljen = () => {
               <p className="text-lg mb-6 opacity-95">
                 Bliv en usynlig beskytter og elite efterforsker
               </p>
-              <Link to="/ansog">
+              <Link to="/ansog/civil-patruljen">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Ansøg Nu
                 </Button>

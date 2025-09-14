@@ -136,7 +136,7 @@ const Indsatsleder = () => {
               <p className="text-lg mb-6 opacity-95">
                 Ansøg i dag og bliv en del af vores elite lederteam
               </p>
-              <Link to="/ansog">
+              <Link to="/ansog/indsatsleder">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Ansøg Nu
                 </Button>

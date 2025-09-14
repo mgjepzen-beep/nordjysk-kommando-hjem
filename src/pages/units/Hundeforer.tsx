@@ -136,7 +136,7 @@ const Hundeforer = () => {
               <p className="text-lg mb-6 opacity-95">
                 Bliv en del af K9-enheden og arbejd sammen med vores firbenede partnere
               </p>
-              <Link to="/ansog">
+              <Link to="/ansog/hundeforer">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Ansøg Nu
                 </Button>

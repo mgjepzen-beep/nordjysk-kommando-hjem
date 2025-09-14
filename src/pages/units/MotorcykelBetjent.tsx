@@ -136,7 +136,7 @@ const MotorcykelBetjent = () => {
               <p className="text-lg mb-6 opacity-95">
                 Bliv specialist i trafiksikkerhed og hurtig respons
               </p>
-              <Link to="/ansog">
+              <Link to="/ansog/motorcykel-betjent">
                 <Button size="lg" variant="secondary" className="text-lg px-8">
                   Ansøg Nu
                 </Button>
