@@ -93,21 +93,33 @@ const Recruiting = () => {
       description: "Frontline politi arbejde med patruljer, trafikstop og efterforskning",
       urgency: "high",
       icon: Shield,
-      applicationPath: "/ansog?position=police"
+      applicationPath: "/ansog?position=police",
+      badges: [
+        { text: "HØJT BEHOV", variant: "destructive" },
+        { text: "FRONTLINE", variant: "secondary" }
+      ]
     },
     {
       title: "Brandmand",
       description: "Brand og redningsoperationer med specialiseret udstyr",
       urgency: "medium",
       icon: AlertTriangle,
-      applicationPath: "/ansog?position=fire"
+      applicationPath: "/ansog?position=fire",
+      badges: [
+        { text: "SPECIALISERET", variant: "outline" },
+        { text: "TEAM ARBEJDE", variant: "secondary" }
+      ]
     },
     {
       title: "Paramediciner",
       description: "Medicinsk behandling og hurtig respons til nødsituationer",
       urgency: "high",
       icon: Heart,
-      applicationPath: "/ansog?position=ems"
+      applicationPath: "/ansog?position=ems",
+      badges: [
+        { text: "KRITISK BEHOV", variant: "destructive" },
+        { text: "24/7 SERVICE", variant: "default" }
+      ]
     }
   ];
 
@@ -143,6 +155,13 @@ const Recruiting = () => {
                     }`} />
                   </div>
                   <CardTitle className="text-xl">{position.title}</CardTitle>
+                  <div className="flex flex-wrap gap-2 justify-center mt-3">
+                    {position.badges.map((badge, badgeIndex) => (
+                      <Badge key={badgeIndex} variant={badge.variant as any} className="text-xs">
+                        {badge.text}
+                      </Badge>
+                    ))}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
