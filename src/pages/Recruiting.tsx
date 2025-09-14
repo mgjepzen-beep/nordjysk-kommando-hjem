@@ -8,7 +8,8 @@ import {
   FileText, 
   Mic, 
   Shield,
-  AlertTriangle,
+  Flame,
+  Cross,
   Heart,
   Zap
 } from "lucide-react";
@@ -103,7 +104,7 @@ const Recruiting = () => {
       title: "Brandmand",
       description: "Brand og redningsoperationer med specialiseret udstyr",
       urgency: "medium",
-      icon: AlertTriangle,
+      icon: Flame,
       applicationPath: "/ansog?position=fire",
       badges: [
         { text: "SPECIALISERET", variant: "outline" },
@@ -114,7 +115,7 @@ const Recruiting = () => {
       title: "Paramediciner",
       description: "Medicinsk behandling og hurtig respons til nødsituationer",
       urgency: "high",
-      icon: Heart,
+      icon: Cross,
       applicationPath: "/ansog?position=ems",
       badges: [
         { text: "KRITISK BEHOV", variant: "destructive" },
