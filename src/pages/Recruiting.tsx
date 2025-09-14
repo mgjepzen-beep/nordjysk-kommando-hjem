@@ -94,33 +94,21 @@ const Recruiting = () => {
       description: "Frontline politi arbejde med patruljer, trafikstop og efterforskning",
       urgency: "high",
       icon: Shield,
-      applicationPath: "/ansog?position=police",
-      badges: [
-        { text: "HØJT BEHOV", variant: "destructive" },
-        { text: "FRONTLINE", variant: "secondary" }
-      ]
+      applicationPath: "/ansog?position=police"
     },
     {
       title: "Brandmand",
       description: "Brand og redningsoperationer med specialiseret udstyr",
       urgency: "medium",
       icon: Flame,
-      applicationPath: "/ansog?position=fire",
-      badges: [
-        { text: "SPECIALISERET", variant: "outline" },
-        { text: "TEAM ARBEJDE", variant: "secondary" }
-      ]
+      applicationPath: "/ansog?position=fire"
     },
     {
       title: "Paramediciner",
       description: "Medicinsk behandling og hurtig respons til nødsituationer",
       urgency: "high",
       icon: Cross,
-      applicationPath: "/ansog?position=ems",
-      badges: [
-        { text: "KRITISK BEHOV", variant: "destructive" },
-        { text: "24/7 SERVICE", variant: "default" }
-      ]
+      applicationPath: "/ansog?position=ems"
     }
   ];
 
@@ -156,25 +144,13 @@ const Recruiting = () => {
                     }`} />
                   </div>
                   <CardTitle className="text-xl">{position.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2 justify-center mt-3">
-                    {position.badges.map((badge, badgeIndex) => (
-                      <Badge key={badgeIndex} variant={badge.variant as any} className="text-xs">
-                        {badge.text}
-                      </Badge>
-                    ))}
-                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {position.description}
                   </p>
                   <Link to={position.applicationPath}>
-                    <Button 
-                      variant="outline" 
-                      className={`w-full ${
-                        position.urgency === 'high' ? 'border-emergency-red text-emergency-red hover:bg-emergency-red hover:text-emergency-red-foreground' : ''
-                      }`}
-                    >
+                    <Button variant="outline" className="w-full">
                       Ansøg Nu
                     </Button>
                   </Link>
