@@ -63,16 +63,10 @@ const Rankings = () => {
       color: "emergency-yellow"
     },
     {
-      name: "Motorcykel Patruljen",
+      name: "Motorcykel Betjent",
       description: "Trafikspecialist på motorcykel",
-      badge: "MOTOR",
+      badge: "MIKE",
       color: "accent"
-    }
-    {
-      name: "Civil Patruljen",
-      description: "Specialist til at skygge.",
-      badge: "CHARLIE",
-      color: "grey"
     }
   ];
 
