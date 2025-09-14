@@ -90,21 +90,18 @@ const Recruiting = () => {
     {
       title: "Politibetjent",
       description: "Frontline politi arbejde med patruljer, trafikstop og efterforskning",
-      openings: 8,
       urgency: "high",
       icon: Shield
     },
     {
       title: "Brandmand",
       description: "Brand og redningsoperationer med specialiseret udstyr",
-      openings: 5,
       urgency: "medium",
       icon: AlertTriangle
     },
     {
       title: "Paramediciner",
       description: "Medicinsk behandling og hurtig respons til nødsituationer",
-      openings: 6,
       urgency: "high",
       icon: Heart
     }
@@ -136,13 +133,10 @@ const Recruiting = () => {
             {positions.map((position, index) => (
               <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
                 <CardHeader>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-center">
                     <position.icon className={`w-8 h-8 ${
                       position.urgency === 'high' ? 'text-emergency-red' : 'text-primary'
                     }`} />
-                    <Badge variant={position.urgency === 'high' ? 'destructive' : 'secondary'}>
-                      {position.openings} ledige
-                    </Badge>
                   </div>
                   <CardTitle className="text-xl">{position.title}</CardTitle>
                 </CardHeader>
