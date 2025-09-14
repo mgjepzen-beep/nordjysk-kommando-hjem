@@ -147,13 +147,15 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="border-none shadow-professional text-center">
-              <CardContent className="pt-6 pb-6">
-                <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">Discord Server</h3>
-                <p className="text-muted-foreground text-sm">Tilslut dig vores community</p>
-              </CardContent>
-            </Card>
+            <a href="https://discord.gg/kc2JWpV3sC" target="_blank" rel="noopener noreferrer">
+              <Card className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale">
+                <CardContent className="pt-6 pb-6">
+                  <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold text-foreground mb-2">Discord Server</h3>
+                  <p className="text-muted-foreground text-sm">Tilslut dig vores community</p>
+                </CardContent>
+              </Card>
+            </a>
             <Card className="border-none shadow-professional text-center">
               <CardContent className="pt-6 pb-6">
                 <MapPin className="w-8 h-8 text-emergency-red mx-auto mb-4" />
