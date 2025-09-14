@@ -27,7 +27,7 @@ const HundeforerApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-hundeforer-application', {
+      const response = await fetch('/functions/v1/submit-hundeforer-application', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

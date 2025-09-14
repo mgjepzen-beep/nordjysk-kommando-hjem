@@ -27,7 +27,7 @@ const IndsatslederApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-indsatsleder-application', {
+      const response = await fetch('/functions/v1/submit-indsatsleder-application', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -27,7 +27,7 @@ const ReaktionsApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-reaktions-application', {
+      const response = await fetch('/functions/v1/submit-reaktions-application', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

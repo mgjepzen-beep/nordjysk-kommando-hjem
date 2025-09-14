@@ -27,7 +27,7 @@ const CivilApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/submit-civil-application', {
+      const response = await fetch('/functions/v1/submit-civil-application', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
