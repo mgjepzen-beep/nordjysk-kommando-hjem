@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Users, Trophy, Phone, MapPin, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import heroBackground from "@/assets/hero-background.png";
 
 const Home = () => {
   const values = [
@@ -33,9 +34,18 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-hero opacity-10"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      <section className="relative py-20 lg:py-32 overflow-hidden min-h-screen">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroBackground})`,
+            opacity: 0.7
+          }}
+        ></div>
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="container mx-auto px-4 relative z-10 flex items-center min-h-screen">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-8">
               <img 
@@ -47,11 +57,11 @@ const Home = () => {
             <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm">
               OFFICIEL NORDJYLLANDS EMERGENCY SERVICES
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
               NORDJYSK
               <span className="text-primary block lg:inline lg:ml-4">FIVEPD</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
               Nordjyllands førende emergency services community. Vi tilbyder professionel politi, 
               brandvæsen og ambulance tjeneste i en realistisk FiveM miljø.
             </p>
@@ -60,7 +70,7 @@ const Home = () => {
                 <Shield className="w-5 h-5 mr-2" />
                 Bliv en del af teamet
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
+              <Button variant="outline" size="lg" className="text-lg px-8 border-white/30 text-white hover:bg-white/10">
                 <Users className="w-5 h-5 mr-2" />
                 Lær mere om os
               </Button>
