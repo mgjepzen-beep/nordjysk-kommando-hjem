@@ -24,7 +24,7 @@ const AktionStyrken = () => {
   ];
 
   const requirements = [
-    "Minimum 8 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Fremragende fysisk form og kondition",
     "Gennemført elitekampkursus og taktisk træning",
     "Psykologisk evaluering og godkendelse",

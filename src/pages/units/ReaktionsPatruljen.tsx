@@ -24,7 +24,7 @@ const ReaktionsPatruljen = () => {
   ];
 
   const requirements = [
-    "Minimum 4 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Fremragende kørselserfaring og reaktionstid",
     "Fysisk form til intensive operationer",
     "Evne til at arbejde under højt pres",

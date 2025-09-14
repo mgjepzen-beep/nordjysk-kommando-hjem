@@ -24,7 +24,7 @@ const MotorcykelBetjent = () => {
   ];
 
   const requirements = [
-    "Minimum 3 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Gyldigt motorcykelkørekort (A-kategori)",
     "Gennemført politiets motorcykelkursus",
     "Fremragende kørselserfaring",

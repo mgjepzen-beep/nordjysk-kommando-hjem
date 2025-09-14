@@ -24,7 +24,7 @@ const Indsatsleder = () => {
   ];
 
   const requirements = [
-    "Minimum 6 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Demonstreret ledererfaring i komplekse situationer",
     "Godkendt kursus i operationel ledelse",
     "Stærke kommunikationsevner",

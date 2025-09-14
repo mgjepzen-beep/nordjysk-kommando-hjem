@@ -24,7 +24,7 @@ const Hundeforer = () => {
   ];
 
   const requirements = [
-    "Minimum 4 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Gennemført specialkursus i hundeføring",
     "Fysisk form til udendørs arbejde i alle vejrforhold",
     "Tålmodighed og empati for dyr",

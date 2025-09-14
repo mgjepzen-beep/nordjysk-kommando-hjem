@@ -24,7 +24,7 @@ const CivilPatruljen = () => {
   ];
 
   const requirements = [
-    "Minimum 5 måneders erfaring som politiassistent",
+    "Minimum 1-2 ugers erfaring som politiassistent",
     "Gennemført specialkursus i efterforskning",
     "Evne til at arbejde selvstændigt og diskret",
     "Stærke observationsevner",
