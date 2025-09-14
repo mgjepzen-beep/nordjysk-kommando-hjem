@@ -73,9 +73,12 @@ const Home = () => {
                 </Button>
               </Link>
               <Link to="/om-os">
-                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm">
-                  <Users className="w-5 h-5 mr-2" />
-                  Lær mere om os
+                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm hover-scale">
+                  <Users className="w-6 h-6 mr-3" />
+                  <span className="flex flex-col items-start">
+                    <span className="font-semibold">Lær mere om os</span>
+                    <span className="text-sm opacity-90">Vores mission & værdier</span>
+                  </span>
                 </Button>
               </Link>
             </div>
