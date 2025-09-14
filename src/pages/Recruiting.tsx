@@ -27,7 +27,12 @@ const Recruiting = () => {
       description: "Godt dansk og arbejdende mikrofon",
       type: "essential"
     },
-    
+    {
+      icon: Clock,
+      title: "Aktivitet",
+      description: "Når du lige har mulighed for det",
+      type: "essential"
+    },
     {
       icon: Shield,
       title: "Attitude",
