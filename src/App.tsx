@@ -11,6 +11,14 @@ import Recruiting from "./pages/Recruiting";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
 
+// Unit pages
+import Indsatsleder from "./pages/units/Indsatsleder";
+import Hundeforer from "./pages/units/Hundeforer";
+import MotorcykelBetjent from "./pages/units/MotorcykelBetjent";
+import ReaktionsPatruljen from "./pages/units/ReaktionsPatruljen";
+import CivilPatruljen from "./pages/units/CivilPatruljen";
+import AktionStyrken from "./pages/units/AktionStyrken";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -26,6 +34,15 @@ const App = () => (
             <Route path="/rangorden" element={<Rankings />} />
             <Route path="/rekruttering" element={<Recruiting />} />
             <Route path="/ansog" element={<Apply />} />
+            
+            {/* Unit pages */}
+            <Route path="/enheder/indsatsleder" element={<Indsatsleder />} />
+            <Route path="/enheder/hundeforer" element={<Hundeforer />} />
+            <Route path="/enheder/motorcykel-betjent" element={<MotorcykelBetjent />} />
+            <Route path="/enheder/reaktions-patruljen" element={<ReaktionsPatruljen />} />
+            <Route path="/enheder/civil-patruljen" element={<CivilPatruljen />} />
+            <Route path="/enheder/aktions-styrken" element={<AktionStyrken />} />
+            
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

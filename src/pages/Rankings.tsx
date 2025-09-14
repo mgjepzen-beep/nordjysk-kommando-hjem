@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Shield, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import rankingsImage from "@/assets/rankings.png";
 
 // Import rank images
@@ -175,26 +176,39 @@ const Rankings = () => {
             Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {specialUnits.map((unit, index) => (
-              <Card key={index} className="border-none shadow-professional text-center">
-                <CardContent className="pt-8 pb-8">
-                  <div className="mb-6">
-                    <Badge 
-                      variant="secondary"
-                     className={`text-lg px-4 py-2 ${
-                        unit.color === 'emergency-red' ? 'bg-emergency-red text-emergency-red-foreground' :
-                        unit.color === 'emergency-yellow' ? 'bg-emergency-yellow text-emergency-yellow-foreground' :
-                        'bg-accent text-accent-foreground'
-                      }`}
-                    >
-                      {unit.badge}
-                    </Badge>
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">{unit.name}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{unit.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+            {specialUnits.map((unit, index) => {
+              const unitRoutes = {
+                "Indsatsleder": "/enheder/indsatsleder",
+                "Hundefører": "/enheder/hundeforer",
+                "Motorcykel Betjent": "/enheder/motorcykel-betjent",
+                "Reaktions patruljen": "/enheder/reaktions-patruljen",
+                "Civil Patruljen": "/enheder/civil-patruljen",
+                "Aktions Styrken": "/enheder/aktions-styrken"
+              };
+              
+              return (
+                <Link key={index} to={unitRoutes[unit.name]} className="block">
+                  <Card className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale">
+                    <CardContent className="pt-8 pb-8">
+                      <div className="mb-6">
+                        <Badge 
+                          variant="secondary"
+                         className={`text-lg px-4 py-2 ${
+                            unit.color === 'emergency-red' ? 'bg-emergency-red text-emergency-red-foreground' :
+                            unit.color === 'emergency-yellow' ? 'bg-emergency-yellow text-emergency-yellow-foreground' :
+                            'bg-accent text-accent-foreground'
+                          }`}
+                        >
+                          {unit.badge}
+                        </Badge>
+                      </div>
+                      <h3 className="text-xl font-bold text-foreground mb-4">{unit.name}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{unit.description}</p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
 
