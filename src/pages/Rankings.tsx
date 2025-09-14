@@ -128,17 +128,6 @@ const Rankings = () => {
           </p>
         </div>
 
-        {/* Rankings Image */}
-        <div className="mb-16 flex justify-center">
-          <div className="bg-card rounded-2xl p-8 shadow-professional">
-            <img 
-              src={rankingsImage} 
-              alt="Politi Rangorden" 
-              className="max-w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
-
         {/* Police Ranks */}
         <div className="mb-16">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
