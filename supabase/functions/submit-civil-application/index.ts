@@ -1,4 +1,4 @@
-import { serve } from "https://deno.land/std@0.168.0/http/server.ts"
+import { serve } from "https://deno.land/std@0.190.0/http/server.ts"
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -11,11 +11,15 @@ serve(async (req) => {
   }
 
   try {
+    console.log('Civil application function called')
     const { name, discordUsername, age, experience, motivation, discretion, availability } = await req.json()
+    console.log('Request data:', { name, discordUsername, age })
     
     const webhookUrl = Deno.env.get('DISCORD_WEBHOOK_CIVIL')
+    console.log('Webhook URL configured:', !!webhookUrl)
     
     if (!webhookUrl) {
+      console.error('Discord webhook URL not configured')
       throw new Error('Discord webhook URL not configured')
     }
 
@@ -50,9 +54,11 @@ serve(async (req) => {
     })
 
     if (!response.ok) {
+      console.error('Discord webhook failed:', response.status, await response.text())
       throw new Error(`Discord webhook failed: ${response.status}`)
     }
 
+    console.log('Application submitted successfully')
     return new Response(
       JSON.stringify({ success: true }),
       {
@@ -61,6 +67,7 @@ serve(async (req) => {
       },
     )
   } catch (error) {
+    console.error('Error in civil application function:', error)
     return new Response(
       JSON.stringify({ error: error.message }),
       {
