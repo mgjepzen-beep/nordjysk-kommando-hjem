@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Zap, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ReaktionsApply = () => {
   const { toast } = useToast();
@@ -27,15 +28,11 @@ const ReaktionsApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/functions/v1/submit-reaktions-application', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      const { error } = await supabase.functions.invoke('submit-reaktions-application', {
+        body: formData
       });
 
-      if (response.ok) {
+      if (!error) {
         toast({
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Reaktions Patruljen er blevet sendt. Vi vender tilbage til dig snarest.",

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Eye, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const CivilApply = () => {
   const { toast } = useToast();
@@ -27,15 +28,11 @@ const CivilApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/functions/v1/submit-civil-application', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      const { error } = await supabase.functions.invoke('submit-civil-application', {
+        body: formData
       });
 
-      if (response.ok) {
+      if (!error) {
         toast({
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Civil Patruljen er blevet sendt. Vi vender tilbage til dig snarest.",

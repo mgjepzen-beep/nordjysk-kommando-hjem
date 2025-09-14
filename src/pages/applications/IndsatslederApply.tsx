@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Shield, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const IndsatslederApply = () => {
   const { toast } = useToast();
@@ -27,15 +28,11 @@ const IndsatslederApply = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/functions/v1/submit-indsatsleder-application', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      const { error } = await supabase.functions.invoke('submit-indsatsleder-application', {
+        body: formData
       });
 
-      if (response.ok) {
+      if (!error) {
         toast({
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Indsatsleder er blevet sendt. Vi vender tilbage til dig snarest.",
