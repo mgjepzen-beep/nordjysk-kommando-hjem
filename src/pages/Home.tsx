@@ -149,7 +149,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <Card 
               className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale"
-              onClick={() => window.open('https://discord.gg/kc2JWpV3sC', '_blank')}
+              onClick={() => window.open('https://discord.gg/BHev4WJf', '_blank')}
             >
               <CardContent className="pt-6 pb-6">
                 <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
