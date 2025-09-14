@@ -45,32 +45,32 @@ const Home = () => {
         ></div>
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40"></div>
-        <div className="container mx-auto px-4 relative z-10 flex items-center min-h-screen">
+        <div className="container mx-auto px-4 relative z-10 flex items-center justify-center min-h-screen">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-12">
               <img 
                 src={logo} 
                 alt="NORDJYSK FIVEPD Logo" 
-                className="h-24 w-24 lg:h-32 lg:w-32 object-contain drop-shadow-lg"
+                className="h-28 w-28 lg:h-36 lg:w-36 object-contain drop-shadow-2xl"
               />
             </div>
-            <Badge variant="secondary" className="mb-6 px-4 py-2 text-sm">
+            <Badge variant="secondary" className="mb-8 px-6 py-3 text-sm font-medium">
               OFFICIEL NORDJYLLANDS EMERGENCY SERVICES
             </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
               NORDJYSK
               <span className="text-primary block lg:inline lg:ml-4">FIVEPD</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            <p className="text-xl lg:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               Nordjyllands førende emergency services community. Vi tilbyder professionel politi, 
               brandvæsen og ambulance tjeneste i en realistisk FiveM miljø.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-hero shadow-professional text-lg px-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Button size="lg" className="bg-gradient-hero shadow-professional text-lg px-10 py-4">
                 <Shield className="w-5 h-5 mr-2" />
                 Bliv en del af teamet
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 border-white/30 text-white hover:bg-white/10">
+              <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm">
                 <Users className="w-5 h-5 mr-2" />
                 Lær mere om os
               </Button>
