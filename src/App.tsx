@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Rankings from "./pages/Rankings";
 import Recruiting from "./pages/Recruiting";
+import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/om-os" element={<About />} />
             <Route path="/rangorden" element={<Rankings />} />
             <Route path="/rekruttering" element={<Recruiting />} />
+            <Route path="/ansog" element={<Apply />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

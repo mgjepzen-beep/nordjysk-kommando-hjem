@@ -26,9 +26,9 @@ const Home = () => {
   ];
 
   const stats = [
-    { number: "150+", label: "Aktive Medlemmer", color: "primary" },
+    { number: "15", label: "Aktive Medlemmer", color: "primary" },
     { number: "24/7", label: "Service", color: "emergency-red" },
-    { number: "3+", label: "År i Drift", color: "emergency-yellow" }
+    { number: "1", label: "År i Drift", color: "emergency-yellow" }
   ];
 
   return (
@@ -163,7 +163,7 @@ const Home = () => {
             </Card>
           </div>
           <div className="text-center mt-12">
-            <Link to="/rekruttering">
+            <Link to="/ansog">
               <Button size="lg" className="bg-gradient-emergency shadow-emergency text-lg px-8">
                 Start Din Ansøgning
               </Button>
