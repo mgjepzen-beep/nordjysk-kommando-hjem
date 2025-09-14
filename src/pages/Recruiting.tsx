@@ -12,6 +12,7 @@ import {
   Heart,
   Zap
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Recruiting = () => {
   const requirements = [
@@ -91,19 +92,22 @@ const Recruiting = () => {
       title: "Politibetjent",
       description: "Frontline politi arbejde med patruljer, trafikstop og efterforskning",
       urgency: "high",
-      icon: Shield
+      icon: Shield,
+      applicationPath: "/ansog?position=police"
     },
     {
       title: "Brandmand",
       description: "Brand og redningsoperationer med specialiseret udstyr",
       urgency: "medium",
-      icon: AlertTriangle
+      icon: AlertTriangle,
+      applicationPath: "/ansog?position=fire"
     },
     {
       title: "Paramediciner",
       description: "Medicinsk behandling og hurtig respons til nødsituationer",
       urgency: "high",
-      icon: Heart
+      icon: Heart,
+      applicationPath: "/ansog?position=ems"
     }
   ];
 
@@ -144,14 +148,16 @@ const Recruiting = () => {
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {position.description}
                   </p>
-                  <Button 
-                    variant="outline" 
-                    className={`w-full ${
-                      position.urgency === 'high' ? 'border-emergency-red text-emergency-red hover:bg-emergency-red hover:text-emergency-red-foreground' : ''
-                    }`}
-                  >
-                    Ansøg Nu
-                  </Button>
+                  <Link to={position.applicationPath}>
+                    <Button 
+                      variant="outline" 
+                      className={`w-full ${
+                        position.urgency === 'high' ? 'border-emergency-red text-emergency-red hover:bg-emergency-red hover:text-emergency-red-foreground' : ''
+                      }`}
+                    >
+                      Ansøg Nu
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -226,14 +232,16 @@ const Recruiting = () => {
                 Bliv en del af vores professionelle team og gør en forskel i communityet. 
                 Din rejse starter her!
               </p>
-              <Button 
-                size="lg" 
-                variant="secondary"
-                className="bg-background text-foreground hover:bg-background/90 text-lg px-8"
-              >
-                <FileText className="w-5 h-5 mr-2" />
-                Start Din Ansøgning
-              </Button>
+              <Link to="/ansog">
+                <Button 
+                  size="lg" 
+                  variant="secondary"
+                  className="bg-background text-foreground hover:bg-background/90 text-lg px-8"
+                >
+                  <FileText className="w-5 h-5 mr-2" />
+                  Start Din Ansøgning
+                </Button>
+              </Link>
             </CardContent>
           </Card>
         </div>

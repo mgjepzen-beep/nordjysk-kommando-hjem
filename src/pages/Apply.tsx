@@ -6,12 +6,14 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle, FileText, User, Mail, Phone, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useSearchParams } from "react-router-dom";
 
 const Apply = () => {
   const { toast } = useToast();
+  const [searchParams] = useSearchParams();
   const [webhookUrl, setWebhookUrl] = useState(localStorage.getItem('discordWebhook') || '');
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -26,6 +28,14 @@ const Apply = () => {
     availability: "",
     agreement: false
   });
+
+  // Pre-select position based on URL parameter
+  useEffect(() => {
+    const positionParam = searchParams.get('position');
+    if (positionParam && ['police', 'fire', 'ems'].includes(positionParam)) {
+      setFormData(prev => ({ ...prev, position: positionParam }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
