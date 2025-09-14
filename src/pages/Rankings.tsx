@@ -65,7 +65,7 @@ const Rankings = () => {
     {
       name: "Motorcykel Betjent",
       description: "Trafikspecialist på motorcykel",
-      badge: "MOTOR",
+      badge: "MIKE",
       color: "accent"
     }
   ];
