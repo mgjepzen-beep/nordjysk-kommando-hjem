@@ -54,6 +54,10 @@ export default {
           yellow: "hsl(var(--emergency-yellow))",
           "yellow-foreground": "hsl(var(--emergency-yellow-foreground))",
         },
+        "emergency-red": "hsl(var(--emergency-red))",
+        "emergency-red-foreground": "hsl(var(--emergency-red-foreground))",
+        "emergency-yellow": "hsl(var(--emergency-yellow))",
+        "emergency-yellow-foreground": "hsl(var(--emergency-yellow-foreground))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
