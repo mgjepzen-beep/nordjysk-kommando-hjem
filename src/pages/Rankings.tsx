@@ -67,6 +67,24 @@ const Rankings = () => {
       description: "Trafikspecialist på motorcykel",
       badge: "MIKE",
       color: "accent"
+    },
+    {
+      name: "Reaktions patruljen",
+      description: "Hurtig respons enhed til akutte situationer",
+      badge: "ROMEO",
+      color: "emergency-red"
+    },
+    {
+      name: "Civil Patruljen",
+      description: "Undercover operationer og diskret overvågning",
+      badge: "CHARLIE",
+      color: "secondary"
+    },
+    {
+      name: "Aktions Styrken",
+      description: "Elite enhed til højrisiko operationer",
+      badge: "AKS",
+      color: "primary"
     }
   ];
 
