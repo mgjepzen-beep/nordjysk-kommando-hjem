@@ -49,10 +49,12 @@ const Navigation = () => {
                 {item.label}
               </Link>
             ))}
-            <Button variant="default" size="sm" className="bg-gradient-hero">
-              <Shield className="w-4 h-4 mr-2" />
-              Ansøg Nu
-            </Button>
+            <Link to="/ansog">
+              <Button variant="default" size="sm" className="bg-gradient-hero">
+                <Shield className="w-4 h-4 mr-2" />
+                Ansøg Nu
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -86,10 +88,12 @@ const Navigation = () => {
                   {item.label}
                 </Link>
               ))}
-              <Button variant="default" size="sm" className="bg-gradient-hero mx-4 mt-2">
-                <Shield className="w-4 h-4 mr-2" />
-                Ansøg Nu
-              </Button>
+              <Link to="/ansog">
+                <Button variant="default" size="sm" className="bg-gradient-hero mx-4 mt-2">
+                  <Shield className="w-4 h-4 mr-2" />
+                  Ansøg Nu
+                </Button>
+              </Link>
             </div>
           </div>
         )}

@@ -66,14 +66,18 @@ const Home = () => {
               brandvæsen og ambulance tjeneste i en realistisk FiveM miljø.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Button size="lg" className="bg-gradient-hero shadow-professional text-lg px-10 py-4">
-                <Shield className="w-5 h-5 mr-2" />
-                Bliv en del af teamet
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm">
-                <Users className="w-5 h-5 mr-2" />
-                Lær mere om os
-              </Button>
+              <Link to="/ansog">
+                <Button size="lg" className="bg-gradient-hero shadow-professional text-lg px-10 py-4">
+                  <Shield className="w-5 h-5 mr-2" />
+                  Bliv en del af teamet
+                </Button>
+              </Link>
+              <Link to="/om-os">
+                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm">
+                  <Users className="w-5 h-5 mr-2" />
+                  Lær mere om os
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
