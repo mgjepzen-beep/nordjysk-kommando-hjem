@@ -3,49 +3,72 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Star } from "lucide-react";
 import rankingsImage from "@/assets/rankings.png";
 
+// Import rank images
+import rigspolitichefImg from "@/assets/ranks/rigspolitichef.png";
+import direktorImg from "@/assets/ranks/direktr.png";
+import chefinspektorImg from "@/assets/ranks/chefinspektr.png";
+import inspektorImg from "@/assets/ranks/inspektr.png";
+import kommissarImg from "@/assets/ranks/kommissr.png";
+import assistentAf1GradImg from "@/assets/ranks/assistent_af_1_grad.png";
+import assistentImg from "@/assets/ranks/assistent.png";
+
 const Rankings = () => {
   const policeRanks = [
     {
       rank: "Rigspolitichef",
       description: "Øverste ledelse af politiet",
       stars: 5,
-      color: "primary"
+      color: "primary",
+      image: rigspolitichefImg
     },
     {
       rank: "Politidirektør",
       description: "Leder af store politikredse",
       stars: 4,
-      color: "primary"
+      color: "primary",
+      image: direktorImg
     },
     {
       rank: "Chefpolitiinspektør",
       description: "Afdelingsleder og koordinator",
       stars: 4,
-      color: "accent"
+      color: "accent",
+      image: chefinspektorImg
     },
     {
       rank: "Politiinspektør",
       description: "Leder af mindre enheder og specialafdelinger",
       stars: 3,
-      color: "accent"
+      color: "accent",
+      image: inspektorImg
     },
     {
       rank: "Vicepolitiinspektør",
       description: "Assisterende leder og erfaren officer",
       stars: 3,
-      color: "secondary"
+      color: "secondary",
+      image: inspektorImg
     },
     {
       rank: "Politikommissær",
       description: "Erfaren officer med lederansvar",
       stars: 2,
-      color: "secondary"
+      color: "secondary",
+      image: kommissarImg
+    },
+    {
+      rank: "Politiassistent af 1. grad",
+      description: "Erfaren betjent med specialiseret uddannelse",
+      stars: 2,
+      color: "secondary",
+      image: assistentAf1GradImg
     },
     {
       rank: "Politiassistent",
       description: "Standard betjent med erfaring",
       stars: 1,
-      color: "muted"
+      color: "muted",
+      image: assistentImg
     }
   ];
 
@@ -125,8 +148,13 @@ const Rankings = () => {
             {policeRanks.map((rank, index) => (
               <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
                 <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{rank.rank}</CardTitle>
+                  <div className="flex flex-col items-center text-center mb-4">
+                    <img 
+                      src={rank.image} 
+                      alt={`${rank.rank} emblem`}
+                      className="w-16 h-16 object-contain mb-4"
+                    />
+                    <CardTitle className="text-lg mb-2">{rank.rank}</CardTitle>
                     <div className="flex items-center">
                       {[...Array(rank.stars)].map((_, i) => (
                         <Star 
@@ -142,7 +170,7 @@ const Rankings = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="text-center">
                   <p className="text-muted-foreground text-sm leading-relaxed">
                     {rank.description}
                   </p>
