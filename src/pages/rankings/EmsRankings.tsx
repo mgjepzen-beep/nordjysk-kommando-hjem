@@ -5,32 +5,44 @@ import { Heart, Star } from "lucide-react";
 const EmsRankings = () => {
   const emsRanks = [
     {
-      rank: "Ambulancechef",
-      description: "Øverste ledelse af ambulancetjenesten",
+      rank: "Ledende Overlæge",
+      description: "Øverste medicinske ledelse",
+      stars: 6,
+      color: "primary"
+    },
+    {
+      rank: "Overlæge",
+      description: "Specialist læge med ledelsesansvar",
       stars: 5,
       color: "primary"
     },
     {
-      rank: "Paramediciner Chef",
-      description: "Leder af paramedicinere og akutbehandling",
+      rank: "Læge",
+      description: "Uddannet læge med medicinsk ansvar",
       stars: 4,
-      color: "primary"
+      color: "accent"
     },
     {
       rank: "Paramediciner",
-      description: "Avanceret præhospital behandling og medicin",
+      description: "Avanceret præhospital behandling",
       stars: 3,
       color: "accent"
     },
     {
-      rank: "Ambulanceassistent",
-      description: "Professionel ambulancebehandler",
+      rank: "Behandler",
+      description: "Erfaren behandler med specialkompetencer",
       stars: 2,
       color: "secondary"
     },
     {
-      rank: "EMT Grundlæggende",
-      description: "Grundlæggende ambulancebehandling",
+      rank: "Assistent",
+      description: "Kvalificeret ambulanceassistent",
+      stars: 1,
+      color: "secondary"
+    },
+    {
+      rank: "Elev",
+      description: "Ambulanceelev under uddannelse",
       stars: 1,
       color: "muted"
     }
@@ -38,27 +50,21 @@ const EmsRankings = () => {
 
   const emsUnits = [
     {
-      name: "Trauma Team",
-      description: "Specialiseret i alvorlige traumeskader og kritiske patienter",
-      badge: "TRAUMA",
-      color: "emergency-red"
-    },
-    {
-      name: "Medicinsk Flyveambulance",
-      description: "Luftambulance til hurtig transport og avanceret behandling",
+      name: "Helicopter Emergency Medical Services",
+      description: "Luftambulance med avanceret medicinsk udstyr til hurtig transport",
       badge: "HEMS",
       color: "primary"
     },
     {
-      name: "Neonatal Transport",
-      description: "Specialiseret transport af nyfødte og kritisk syge børn",
-      badge: "NICU",
+      name: "Water Emergency Medical Services",
+      description: "Specialiseret vandambulance til maritime redningsoperationer",
+      badge: "VEMS",
       color: "accent"
     },
     {
-      name: "Psykiatrisk Beredskab",
-      description: "Håndtering af psykiatriske kriser og mentale sundhedssituationer",
-      badge: "PSYCH",
+      name: "Tactical Emergency Medical Services",
+      description: "Taktisk medicinsk støtte til politiets specialenheder",
+      badge: "TEMS",
       color: "secondary"
     }
   ];
@@ -122,7 +128,7 @@ const EmsRankings = () => {
         {/* Special Units */}
         <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-            Specialenheder
+            Indsatseder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {emsUnits.map((unit, index) => (
