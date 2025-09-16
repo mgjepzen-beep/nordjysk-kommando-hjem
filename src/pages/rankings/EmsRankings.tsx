@@ -134,7 +134,7 @@ const EmsRankings = () => {
         {/* Special Units */}
         <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
-            Indsatseder
+            Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {emsUnits.map((unit, index) => (
