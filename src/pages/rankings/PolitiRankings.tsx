@@ -70,13 +70,6 @@ const Rankings = () => {
       image: kommissarImg
     },
     {
-      rank: "Politibetjent 1. klasse",
-      description: "Erfaren betjent med specialiseret uddannelse",
-      stars: 2,
-      color: "secondary",
-      image: betjent1Img
-    },
-    {
       rank: "Politiassistent af 1. grad",
       description: "Erfaren betjent med specialiseret uddannelse",
       stars: 2,
@@ -89,6 +82,13 @@ const Rankings = () => {
       stars: 1,
       color: "muted",
       image: assistent2Img
+    },
+    {
+      rank: "Politibetjent",
+      description: "Grunduddannet betjent",
+      stars: 1,
+      color: "muted",
+      image: betjent1Img
     },
     {
       rank: "Politikadet",
