@@ -50,6 +50,12 @@ const EmsRankings = () => {
 
   const emsUnits = [
     {
+      name: "Indsatsleder",
+      description: "Leder på skadested med overordnet ansvar for medicinske operationer",
+      badge: "ISL",
+      color: "primary"
+    },
+    {
       name: "Helicopter Emergency Medical Services",
       description: "Luftambulance med avanceret medicinsk udstyr til hurtig transport",
       badge: "HEMS",
