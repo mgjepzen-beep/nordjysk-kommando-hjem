@@ -160,7 +160,7 @@ const Rankings = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Politi Rangorden
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             Vores rangsystem er baseret på det danske politis officielle hierarki og 
             sikrer professionel ledelse og klare ansvarsområder.
           </p>
