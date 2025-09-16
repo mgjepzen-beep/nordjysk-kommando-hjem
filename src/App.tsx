@@ -6,10 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Rankings from "./pages/Rankings";
 import Recruiting from "./pages/Recruiting";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+
+// Ranking pages
+import PolitiRankings from "./pages/rankings/PolitiRankings";
+import BrandRankings from "./pages/rankings/BrandRankings";
+import EmsRankings from "./pages/rankings/EmsRankings";
 
 // Unit pages
 import Indsatsleder from "./pages/units/Indsatsleder";
@@ -39,9 +43,15 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/om-os" element={<About />} />
-            <Route path="/rangorden" element={<Rankings />} />
             <Route path="/rekruttering" element={<Recruiting />} />
             <Route path="/ansog" element={<Apply />} />
+            
+            {/* Ranking pages */}
+            <Route path="/rangorden/politi" element={<PolitiRankings />} />
+            <Route path="/rangorden/brand" element={<BrandRankings />} />
+            <Route path="/rangorden/ems" element={<EmsRankings />} />
+            {/* Redirect old rankings route to politi */}
+            <Route path="/rangorden" element={<PolitiRankings />} />
             
             {/* Unit pages */}
             <Route path="/enheder/indsatsleder" element={<Indsatsleder />} />
