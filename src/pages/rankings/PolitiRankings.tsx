@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import rankingsImage from "@/assets/rankings.png";
+import politiBackground from "@/assets/politi-background.png";
 
 // Import rank images
 import rigspolitichefImg from "@/assets/ranks/rigspolitichef.png";
@@ -139,8 +140,18 @@ const Rankings = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4">
+    <div 
+      className="min-h-screen py-20 relative"
+      style={{
+        backgroundImage: `url(${politiBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      {/* Background overlay for better readability */}
+      <div className="absolute inset-0 bg-background/30 backdrop-blur-sm"></div>
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2">
