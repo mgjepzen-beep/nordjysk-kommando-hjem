@@ -7,11 +7,16 @@ import rankingsImage from "@/assets/rankings.png";
 // Import rank images
 import rigspolitichefImg from "@/assets/ranks/rigspolitichef.png";
 import direktorImg from "@/assets/ranks/direktr.png";
+import politimesterImg from "@/assets/ranks/politimester.png";
+import politimester2Img from "@/assets/ranks/politimester2.png";
 import chefinspektorImg from "@/assets/ranks/chefinspektr.png";
 import inspektorImg from "@/assets/ranks/inspektr.png";
 import kommissarImg from "@/assets/ranks/kommissr.png";
+import betjent1Img from "@/assets/ranks/betjent1.png";
 import assistentAf1GradImg from "@/assets/ranks/assistent_af_1_grad.png";
 import assistentImg from "@/assets/ranks/assistent.png";
+import assistent2Img from "@/assets/ranks/assistent2.png";
+import kadetImg from "@/assets/ranks/kadet.png";
 
 const Rankings = () => {
   const policeRanks = [
@@ -25,9 +30,16 @@ const Rankings = () => {
     {
       rank: "Politidirektør",
       description: "Leder af store politikredse",
-      stars: 4,
+      stars: 5,
       color: "primary",
       image: direktorImg
+    },
+    {
+      rank: "Politimester",
+      description: "Øverste leder af politikreds",
+      stars: 4,
+      color: "primary",
+      image: politimester2Img
     },
     {
       rank: "Chefpolitiinspektør",
@@ -58,6 +70,13 @@ const Rankings = () => {
       image: kommissarImg
     },
     {
+      rank: "Politibetjent 1. klasse",
+      description: "Erfaren betjent med specialiseret uddannelse",
+      stars: 2,
+      color: "secondary",
+      image: betjent1Img
+    },
+    {
       rank: "Politiassistent af 1. grad",
       description: "Erfaren betjent med specialiseret uddannelse",
       stars: 2,
@@ -69,7 +88,14 @@ const Rankings = () => {
       description: "Standard betjent med erfaring",
       stars: 1,
       color: "muted",
-      image: assistentImg
+      image: assistent2Img
+    },
+    {
+      rank: "Politikadet",
+      description: "Politielev under uddannelse",
+      stars: 1,
+      color: "muted",
+      image: kadetImg
     }
   ];
 
