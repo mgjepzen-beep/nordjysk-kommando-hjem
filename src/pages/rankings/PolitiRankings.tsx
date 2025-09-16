@@ -150,7 +150,7 @@ const Rankings = () => {
       }}
     >
       {/* Background overlay for better readability */}
-      <div className="absolute inset-0 bg-background/30 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/15 backdrop-blur-sm"></div>
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
