@@ -97,7 +97,7 @@ const EmsRankings = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             EMS Rangorden
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             Vores ambulancetjeneste rangsystem sikrer professionel medicinsk behandling og patient transport 
             med højtrænet personale og specialiserede enheder.
           </p>
