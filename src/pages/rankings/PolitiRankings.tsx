@@ -222,7 +222,7 @@ const Rankings = () => {
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
             Politi Gradstegn
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {policeInsigniaGroups.map((group, groupIndex) => (
               <Card key={groupIndex} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
                 <CardHeader className="pb-4">
