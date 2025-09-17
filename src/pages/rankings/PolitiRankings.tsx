@@ -59,6 +59,12 @@ const Rankings = () => {
           color: "primary"
         },
         {
+          rank: "Chefpolitiinspektør",
+          description: "Afdelingsleder og koordinator",
+          stars: 4,
+          color: "accent"
+        },
+        {
           rank: "Vicestabschef",
           description: "Vicestabschef med operativt ansvar",
           stars: 3,
@@ -70,9 +76,9 @@ const Rankings = () => {
       image: chefinspektorImg,
       ranks: [
         {
-          rank: "Chefpolitiinspektør",
-          description: "Afdelingsleder og koordinator",
-          stars: 4,
+          rank: "Politiinspektør",
+          description: "Leder af mindre enheder og specialafdelinger",
+          stars: 3,
           color: "accent"
         }
       ]
@@ -80,12 +86,6 @@ const Rankings = () => {
     {
       image: inspektorImg,
       ranks: [
-        {
-          rank: "Politiinspektør",
-          description: "Leder af mindre enheder og specialafdelinger",
-          stars: 3,
-          color: "accent"
-        },
         {
           rank: "Vicepolitiinspektør",
           description: "Assisterende leder og erfaren officer",
