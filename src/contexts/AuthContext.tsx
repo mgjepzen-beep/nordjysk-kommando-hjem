@@ -120,16 +120,37 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   };
 
   const signInWithDiscord = async () => {
-    const redirectUrl = `${window.location.origin}/`;
-    
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider: 'discord',
-      options: {
-        redirectTo: redirectUrl
+    try {
+      const redirectUrl = `${window.location.origin}/`;
+      
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'discord',
+        options: {
+          redirectTo: redirectUrl
+        }
+      });
+      
+      if (error) {
+        // Enhanced error handling for Discord auth
+        if (error.message.includes('provider is not enabled')) {
+          return { 
+            error: { 
+              message: 'Discord login er ikke konfigureret. Kontakt administrator.' 
+            } 
+          };
+        }
+        console.error('Discord auth error:', error);
       }
-    });
-    
-    return { error };
+      
+      return { error };
+    } catch (error) {
+      console.error('Unexpected Discord auth error:', error);
+      return { 
+        error: { 
+          message: 'Der opstod en uventet fejl ved login. Prøv igen senere.' 
+        } 
+      };
+    }
   };
 
   const signOut = async () => {

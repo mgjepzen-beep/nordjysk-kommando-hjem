@@ -9,6 +9,9 @@ import { ArrowLeft, Eye, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { civilApplicationSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
+import { logSecurityEvent, sanitizeErrorMessage } from "@/lib/security";
+import { ZodError } from "zod";
 
 const CivilApply = () => {
   const { toast } = useToast();

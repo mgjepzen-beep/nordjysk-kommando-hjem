@@ -9,10 +9,14 @@ import { ArrowLeft, Target, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { aktionApplicationSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
+import { logSecurityEvent, sanitizeErrorMessage } from "@/lib/security";
+import { ZodError } from "zod";
 
 const AktionApply = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "",
     discordUsername: "",
@@ -26,17 +30,50 @@ const AktionApply = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setValidationErrors({});
 
     try {
+      // Rate limiting check
+      const clientId = `${navigator.userAgent}-${Date.now()}`;
+      if (!checkRateLimit(clientId, 3, 300000)) { // 3 attempts per 5 minutes
+        logSecurityEvent({
+          type: 'rate_limit_exceeded',
+          timestamp: Date.now(),
+          metadata: { form: 'aktion' }
+        });
+        throw new Error('rate_limit');
+      }
+
+      // Sanitize input data
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        discordUsername: sanitizeInput(formData.discordUsername),
+        age: sanitizeInput(formData.age),
+        experience: sanitizeInput(formData.experience),
+        motivation: sanitizeInput(formData.motivation),
+        specialSkills: sanitizeInput(formData.specialSkills),
+        availability: sanitizeInput(formData.availability)
+      };
+
+      // Validate with Zod schema
+      const validatedData = aktionApplicationSchema.parse(sanitizedData);
+
       const { error } = await supabase.functions.invoke('submit-aktion-application', {
-        body: formData
+        body: validatedData
       });
 
       if (!error) {
+        logSecurityEvent({
+          type: 'application_submit',
+          timestamp: Date.now(),
+          metadata: { form: 'aktion', success: true }
+        });
+
         toast({
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Aktions Styrken er blevet sendt. Vi vender tilbage til dig snarest.",
         });
+        
         setFormData({
           name: "",
           discordUsername: "",
@@ -47,23 +84,53 @@ const AktionApply = () => {
           availability: ""
         });
       } else {
-        throw new Error('Failed to submit application');
+        throw error;
       }
     } catch (error) {
-      toast({
-        title: "Fejl",
-        description: "Der opstod en fejl ved afsendelse af din ansøgning. Prøv igen senere.",
-        variant: "destructive",
+      logSecurityEvent({
+        type: 'application_submit',
+        timestamp: Date.now(),
+        metadata: { form: 'aktion', success: false, error: error instanceof Error ? error.message : 'unknown' }
       });
+
+      if (error instanceof ZodError) {
+        const fieldErrors: Record<string, string> = {};
+        error.issues.forEach((issue) => {
+          if (issue.path[0]) {
+            fieldErrors[issue.path[0] as string] = issue.message;
+          }
+        });
+        setValidationErrors(fieldErrors);
+        
+        toast({
+          title: "Valideringsfejl",
+          description: "Kontroller venligst dine indtastninger og prøv igen.",
+          variant: "destructive",
+        });
+      } else {
+        const safeMessage = sanitizeErrorMessage(error);
+        toast({
+          title: "Fejl",
+          description: safeMessage,
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Clear validation error when user starts typing
+    if (validationErrors[name]) {
+      setValidationErrors(prev => ({ ...prev, [name]: '' }));
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: sanitizeInput(value),
     });
   };
 
@@ -114,7 +181,11 @@ const AktionApply = () => {
                     onChange={handleChange}
                     required
                     placeholder="Dit fulde navn"
+                    className={validationErrors.name ? "border-destructive" : ""}
                   />
+                  {validationErrors.name && (
+                    <p className="text-sm text-destructive">{validationErrors.name}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="discordUsername">Discord Brugernavn *</Label>
@@ -125,7 +196,11 @@ const AktionApply = () => {
                     onChange={handleChange}
                     required
                     placeholder="@brugernavn"
+                    className={validationErrors.discordUsername ? "border-destructive" : ""}
                   />
+                  {validationErrors.discordUsername && (
+                    <p className="text-sm text-destructive">{validationErrors.discordUsername}</p>
+                  )}
                 </div>
               </div>
 
@@ -140,7 +215,13 @@ const AktionApply = () => {
                     onChange={handleChange}
                     required
                     placeholder="Din alder"
+                    min="16"
+                    max="99"
+                    className={validationErrors.age ? "border-destructive" : ""}
                   />
+                  {validationErrors.age && (
+                    <p className="text-sm text-destructive">{validationErrors.age}</p>
+                  )}
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="experience">Erfaring som Politiassistent *</Label>
@@ -151,7 +232,12 @@ const AktionApply = () => {
                     onChange={handleChange}
                     required
                     placeholder="Beskriv din erfaring kort"
+                    maxLength={500}
+                    className={validationErrors.experience ? "border-destructive" : ""}
                   />
+                  {validationErrors.experience && (
+                    <p className="text-sm text-destructive">{validationErrors.experience}</p>
+                  )}
                 </div>
               </div>
 
@@ -165,7 +251,12 @@ const AktionApply = () => {
                   required
                   placeholder="Fortæl os om din motivation og hvorfor du mener du hører til i vores elite enhed..."
                   rows={4}
+                  maxLength={1000}
+                  className={validationErrors.motivation ? "border-destructive" : ""}
                 />
+                {validationErrors.motivation && (
+                  <p className="text-sm text-destructive">{validationErrors.motivation}</p>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -178,7 +269,12 @@ const AktionApply = () => {
                   required
                   placeholder="Beskriv dine særlige færdigheder, taktisk erfaring, lederevner og alt hvad der gør dig egnet til elite opgaver..."
                   rows={4}
+                  maxLength={1000}
+                  className={validationErrors.specialSkills ? "border-destructive" : ""}
                 />
+                {validationErrors.specialSkills && (
+                  <p className="text-sm text-destructive">{validationErrors.specialSkills}</p>
+                )}
               </div>
 
               <div className="space-y-2">
@@ -191,7 +287,12 @@ const AktionApply = () => {
                   required
                   placeholder="Hvornår er du tilgængelig? (dage, tidspunkter, etc.)"
                   rows={3}
+                  maxLength={500}
+                  className={validationErrors.availability ? "border-destructive" : ""}
                 />
+                {validationErrors.availability && (
+                  <p className="text-sm text-destructive">{validationErrors.availability}</p>
+                )}
               </div>
 
               <div className="flex justify-center pt-6">
