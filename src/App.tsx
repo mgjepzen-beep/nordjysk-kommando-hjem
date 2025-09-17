@@ -31,6 +31,8 @@ import ReaktionsApply from "./pages/applications/ReaktionsApply";
 import CivilApply from "./pages/applications/CivilApply";
 import AktionApply from "./pages/applications/AktionApply";
 
+import Auth from "./pages/Auth";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -42,6 +44,7 @@ const App = () => (
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/auth" element={<Auth />} />
             <Route path="/om-os" element={<About />} />
             <Route path="/rekruttering" element={<Recruiting />} />
             <Route path="/ansog" element={<Apply />} />
