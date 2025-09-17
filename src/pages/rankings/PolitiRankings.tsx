@@ -40,6 +40,20 @@ const Rankings = () => {
       description: "Øverste leder af politikreds",
       stars: 4,
       color: "primary",
+      image: direktorImg
+    },
+    {
+      rank: "Stabschef",
+      description: "Stabschef med strategisk ansvar",
+      stars: 4,
+      color: "primary",
+      image: politimester2Img
+    },
+    {
+      rank: "Vicestabschef",
+      description: "Vicestabschef med operativt ansvar",
+      stars: 3,
+      color: "accent",
       image: politimester2Img
     },
     {
