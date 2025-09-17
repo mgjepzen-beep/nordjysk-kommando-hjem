@@ -1,6 +1,6 @@
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -36,49 +36,53 @@ import SecurityDashboard from "./pages/SecurityDashboard";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <Toaster />
-    <Sonner />
-    <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/auth" element={<Auth />} />
-            <Route path="/sikkerhed" element={<SecurityDashboard />} />
-            <Route path="/om-os" element={<About />} />
-            <Route path="/rekruttering" element={<Recruiting />} />
-            <Route path="/ansog" element={<Apply />} />
-            
-            {/* Ranking pages */}
-            <Route path="/rangorden/politi" element={<PolitiRankings />} />
-            <Route path="/rangorden/brand" element={<BrandRankings />} />
-            <Route path="/rangorden/ems" element={<EmsRankings />} />
-            {/* Redirect old rankings route to politi */}
-            <Route path="/rangorden" element={<PolitiRankings />} />
-            
-            {/* Unit pages */}
-            <Route path="/enheder/indsatsleder" element={<Indsatsleder />} />
-            <Route path="/enheder/hundeforer" element={<Hundeforer />} />
-            <Route path="/enheder/motorcykel-betjent" element={<MotorcykelBetjent />} />
-            <Route path="/enheder/reaktions-patruljen" element={<ReaktionsPatruljen />} />
-            <Route path="/enheder/civil-patruljen" element={<CivilPatruljen />} />
-            <Route path="/enheder/aktions-styrken" element={<AktionStyrken />} />
-            
-            {/* Application pages */}
-            <Route path="/ansog/indsatsleder" element={<IndsatslederApply />} />
-            <Route path="/ansog/hundeforer" element={<HundeforerApply />} />
-            <Route path="/ansog/motorcykel-betjent" element={<MotorcykelApply />} />
-            <Route path="/ansog/reaktions-patruljen" element={<ReaktionsApply />} />
-            <Route path="/ansog/civil-patruljen" element={<CivilApply />} />
-            <Route path="/ansog/aktions-styrken" element={<AktionApply />} />
-            
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
-    </QueryClientProvider>
+const App = () => {
+  return (
+    <React.StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/auth" element={<Auth />} />
+              <Route path="/sikkerhed" element={<SecurityDashboard />} />
+              <Route path="/om-os" element={<About />} />
+              <Route path="/rekruttering" element={<Recruiting />} />
+              <Route path="/ansog" element={<Apply />} />
+              
+              {/* Ranking pages */}
+              <Route path="/rangorden/politi" element={<PolitiRankings />} />
+              <Route path="/rangorden/brand" element={<BrandRankings />} />
+              <Route path="/rangorden/ems" element={<EmsRankings />} />
+              {/* Redirect old rankings route to politi */}
+              <Route path="/rangorden" element={<PolitiRankings />} />
+              
+              {/* Unit pages */}
+              <Route path="/enheder/indsatsleder" element={<Indsatsleder />} />
+              <Route path="/enheder/hundeforer" element={<Hundeforer />} />
+              <Route path="/enheder/motorcykel-betjent" element={<MotorcykelBetjent />} />
+              <Route path="/enheder/reaktions-patruljen" element={<ReaktionsPatruljen />} />
+              <Route path="/enheder/civil-patruljen" element={<CivilPatruljen />} />
+              <Route path="/enheder/aktions-styrken" element={<AktionStyrken />} />
+              
+              {/* Application pages */}
+              <Route path="/ansog/indsatsleder" element={<IndsatslederApply />} />
+              <Route path="/ansog/hundeforer" element={<HundeforerApply />} />
+              <Route path="/ansog/motorcykel-betjent" element={<MotorcykelApply />} />
+              <Route path="/ansog/reaktions-patruljen" element={<ReaktionsApply />} />
+              <Route path="/ansog/civil-patruljen" element={<CivilApply />} />
+              <Route path="/ansog/aktions-styrken" element={<AktionApply />} />
+              
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </React.StrictMode>
   );
+};
 
 export default App;
