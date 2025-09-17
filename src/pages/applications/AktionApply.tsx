@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { aktionApplicationSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
-import { logSecurityEvent, sanitizeErrorMessage } from "@/lib/security";
 import { ZodError } from "zod";
 
 const AktionApply = () => {
@@ -36,12 +35,7 @@ const AktionApply = () => {
       // Rate limiting check
       const clientId = `${navigator.userAgent}-${Date.now()}`;
       if (!checkRateLimit(clientId, 3, 300000)) { // 3 attempts per 5 minutes
-        logSecurityEvent({
-          type: 'rate_limit_exceeded',
-          timestamp: Date.now(),
-          metadata: { form: 'aktion' }
-        });
-        throw new Error('rate_limit');
+        throw new Error('For mange forsøg. Vent venligst før du prøver igen.');
       }
 
       // Sanitize input data
@@ -63,12 +57,6 @@ const AktionApply = () => {
       });
 
       if (!error) {
-        logSecurityEvent({
-          type: 'application_submit',
-          timestamp: Date.now(),
-          metadata: { form: 'aktion', success: true }
-        });
-
         toast({
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Aktions Styrken er blevet sendt. Vi vender tilbage til dig snarest.",
@@ -87,12 +75,6 @@ const AktionApply = () => {
         throw error;
       }
     } catch (error) {
-      logSecurityEvent({
-        type: 'application_submit',
-        timestamp: Date.now(),
-        metadata: { form: 'aktion', success: false, error: error instanceof Error ? error.message : 'unknown' }
-      });
-
       if (error instanceof ZodError) {
         const fieldErrors: Record<string, string> = {};
         error.issues.forEach((issue) => {
@@ -108,10 +90,9 @@ const AktionApply = () => {
           variant: "destructive",
         });
       } else {
-        const safeMessage = sanitizeErrorMessage(error);
         toast({
           title: "Fejl",
-          description: safeMessage,
+          description: "Der opstod en fejl ved afsendelse af din ansøgning. Prøv igen senere.",
           variant: "destructive",
         });
       }

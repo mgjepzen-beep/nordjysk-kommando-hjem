@@ -10,12 +10,12 @@ import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { civilApplicationSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
-import { logSecurityEvent, sanitizeErrorMessage } from "@/lib/security";
 import { ZodError } from "zod";
 
 const CivilApply = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
   const [formData, setFormData] = useState({
     name: "",
     discordUsername: "",
@@ -29,10 +29,31 @@ const CivilApply = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setValidationErrors({});
 
     try {
+      // Rate limiting check
+      const clientId = `${navigator.userAgent}-${Date.now()}`;
+      if (!checkRateLimit(clientId, 3, 300000)) { // 3 attempts per 5 minutes
+        throw new Error('For mange forsøg. Vent venligst før du prøver igen.');
+      }
+
+      // Sanitize input data
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        discordUsername: sanitizeInput(formData.discordUsername),
+        age: sanitizeInput(formData.age),
+        experience: sanitizeInput(formData.experience),
+        motivation: sanitizeInput(formData.motivation),
+        discretion: sanitizeInput(formData.discretion),
+        availability: sanitizeInput(formData.availability)
+      };
+
+      // Validate with Zod schema
+      const validatedData = civilApplicationSchema.parse(sanitizedData);
+
       const { error } = await supabase.functions.invoke('submit-civil-application', {
-        body: formData
+        body: validatedData
       });
 
       if (!error) {
@@ -40,6 +61,7 @@ const CivilApply = () => {
           title: "Ansøgning sendt!",
           description: "Din ansøgning til Civil Patruljen er blevet sendt. Vi vender tilbage til dig snarest.",
         });
+        
         setFormData({
           name: "",
           discordUsername: "",
@@ -50,23 +72,46 @@ const CivilApply = () => {
           availability: ""
         });
       } else {
-        throw new Error('Failed to submit application');
+        throw error;
       }
     } catch (error) {
-      toast({
-        title: "Fejl",
-        description: "Der opstod en fejl ved afsendelse af din ansøgning. Prøv igen senere.",
-        variant: "destructive",
-      });
+      if (error instanceof ZodError) {
+        const fieldErrors: Record<string, string> = {};
+        error.issues.forEach((issue) => {
+          if (issue.path[0]) {
+            fieldErrors[issue.path[0] as string] = issue.message;
+          }
+        });
+        setValidationErrors(fieldErrors);
+        
+        toast({
+          title: "Valideringsfejl",
+          description: "Kontroller venligst dine indtastninger og prøv igen.",
+          variant: "destructive",
+        });
+      } else {
+        toast({
+          title: "Fejl",
+          description: "Der opstod en fejl ved afsendelse af din ansøgning. Prøv igen senere.",
+          variant: "destructive",
+        });
+      }
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    
+    // Clear validation error when user starts typing
+    if (validationErrors[name]) {
+      setValidationErrors(prev => ({ ...prev, [name]: '' }));
+    }
+    
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: sanitizeInput(value),
     });
   };
 
