@@ -7,7 +7,7 @@ import {
   HoverCardContent,
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
-
+import UserMenu from "@/components/UserMenu";
 import logo from "@/assets/logo.png";
 
 const Navigation = () => {
@@ -101,6 +101,7 @@ const Navigation = () => {
               </Button>
             </Link>
             
+            <UserMenu />
           </div>
 
           {/* Mobile menu button */}
@@ -160,6 +161,10 @@ const Navigation = () => {
                   Ansøg Nu
                 </Button>
               </Link>
+              
+              <div className="mx-4 mt-2">
+                <UserMenu />
+              </div>
             </div>
           </div>
         )}
