@@ -20,6 +20,7 @@ interface AuthContextType {
   loading: boolean;
   signInWithDiscord: () => Promise<{ error: any }>;
   signOut: () => Promise<{ error: any }>;
+  fetchPublicProfile: (userId: string) => Promise<any>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -79,6 +80,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const fetchUserProfile = async (userId: string) => {
     try {
+      // Always fetch full profile for the current user
       const { data, error } = await supabase
         .from('profiles')
         .select('*')
@@ -93,6 +95,27 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setProfile(data);
     } catch (error) {
       console.error('Error fetching profile:', error);
+    }
+  };
+
+  // Function to fetch public profile data (limited fields for other users)
+  const fetchPublicProfile = async (userId: string) => {
+    try {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('id, user_id, display_name, avatar_url, created_at')
+        .eq('user_id', userId)
+        .single();
+
+      if (error) {
+        console.error('Error fetching public profile:', error);
+        return null;
+      }
+
+      return data;
+    } catch (error) {
+      console.error('Error fetching public profile:', error);
+      return null;
     }
   };
 
@@ -120,7 +143,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     profile,
     loading,
     signInWithDiscord,
-    signOut
+    signOut,
+    fetchPublicProfile
   };
 
   return (
