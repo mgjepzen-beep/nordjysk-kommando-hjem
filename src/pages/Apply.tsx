@@ -10,11 +10,11 @@ import { useState, useEffect } from "react";
 import { CheckCircle, FileText, User, Mail, Phone, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useSearchParams } from "react-router-dom";
+import { supabase } from "@/integrations/supabase/client";
 
 const Apply = () => {
   const { toast } = useToast();
   const [searchParams] = useSearchParams();
-  const [webhookUrl, setWebhookUrl] = useState(localStorage.getItem('discordWebhook') || '');
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -49,74 +49,47 @@ const Apply = () => {
       return;
     }
 
-    if (!webhookUrl) {
-      toast({
-        title: "Fejl",
-        description: "Discord webhook URL er ikke konfigureret",
-        variant: "destructive"
-      });
-      return;
-    }
-
     setIsLoading(true);
 
     try {
-      // Create Discord embed for the application
-      const embed = {
-        title: "🔥 Ny Ansøgning - NORDJYSK FIVEPD",
-        color: 0x3b82f6, // Blue color
-        fields: [
-          { name: "📛 Navn", value: formData.fullName, inline: true },
-          { name: "🎂 Alder", value: formData.age, inline: true },
-          { name: "📧 Email", value: formData.email, inline: true },
-          { name: "💬 Discord", value: formData.discord, inline: true },
-          { name: "📱 Telefon", value: formData.phone || "Ikke angivet", inline: true },
-          { name: "🚔 Ønsket Stilling", value: positions.find(p => p.value === formData.position)?.label || formData.position, inline: true },
-          { name: "💼 Erfaring", value: formData.experience || "Ingen erfaring angivet", inline: false },
-          { name: "💡 Motivation", value: formData.motivation, inline: false },
-          { name: "🕒 Tilgængelighed", value: formData.availability || "Ikke angivet", inline: false }
-        ],
-        timestamp: new Date().toISOString(),
-        footer: {
-          text: "NORDJYSK FIVEPD Rekruttering"
+      const { data, error } = await supabase.functions.invoke('submit-general-application', {
+        body: {
+          fullName: formData.fullName,
+          age: parseInt(formData.age),
+          email: formData.email,
+          discord: formData.discord,
+          phone: formData.phone,
+          position: formData.position,
+          experience: formData.experience,
+          motivation: formData.motivation,
+          availability: formData.availability
         }
-      };
-
-      const response = await fetch(webhookUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          content: "🆕 **Ny ansøgning modtaget!**",
-          embeds: [embed]
-        }),
       });
 
-      if (response.ok) {
-        toast({
-          title: "Ansøgning Sendt!",
-          description: "Din ansøgning er sendt til Discord serveren. Vi vender tilbage til dig inden for 24-48 timer",
-        });
-        
-        // Reset form
-        setFormData({
-          fullName: "",
-          age: "",
-          email: "",
-          discord: "",
-          phone: "",
-          position: "",
-          experience: "",
-          motivation: "",
-          availability: "",
-          agreement: false
-        });
-      } else {
-        throw new Error('Failed to send to Discord');
+      if (error) {
+        throw error;
       }
+
+      toast({
+        title: "Ansøgning Sendt!",
+        description: "Din ansøgning er sendt til Discord serveren. Vi vender tilbage til dig inden for 24-48 timer",
+      });
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        age: "",
+        email: "",
+        discord: "",
+        phone: "",
+        position: "",
+        experience: "",
+        motivation: "",
+        availability: "",
+        agreement: false
+      });
     } catch (error) {
-      console.error("Error sending to Discord:", error);
+      console.error("Error sending application:", error);
       toast({
         title: "Fejl",
         description: "Der opstod en fejl ved afsendelse af ansøgningen. Prøv igen senere.",
