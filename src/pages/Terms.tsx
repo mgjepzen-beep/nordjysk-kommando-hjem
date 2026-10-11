@@ -7,15 +7,15 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Terms = () => (
   <LegalPage
     title="Vilkår og juridisk information"
-    updated="[DATO]"
+    updated="10/12/2026"
     intro="Information om hvem der driver siden, regler for brug og forbehold vedrørende varemærker og spilindhold."
     sections={[
       {
         title: "Hvem driver siden",
         body: (
           <p>
-            Siden drives af <P>[NAVN / FORENING]</P>, <P>[ADRESSE ELLER BY]</P>, kontakt: <P>[KONTAKT-EMAIL]</P>. Siden
-            er ikke kommerciel.
+            Siden drives af <P>Mikkel Gottlieb</P>, <P>5000, Odense</P>, kontakt: <P>mgjepzen@gmail.com</P>. Siden er
+            ikke kommerciel.
           </p>
         ),
       },
