@@ -81,14 +81,14 @@ const IndsatslederApply = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-12">
+        <header className="mb-10">
           <Badge variant="secondary" className="mb-4 px-4 py-2 bg-emergency-red text-emergency-red-foreground">
             INDSATS - ANSØGNING
           </Badge>
           <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Ansøg til Indsatsleder
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             Udfyld formularen nedenfor for at ansøge om at blive Indsatsleder. 
             Vi ser frem til at høre om dine kvalifikationer og motivation.
           </p>
