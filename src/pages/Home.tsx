@@ -1,183 +1,178 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Shield, Users, Trophy, Phone, MapPin, Clock } from "lucide-react";
+import { Shield, Users, Trophy, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import heroBackground from "@/assets/hero-background.png";
 
 const Home = () => {
+  const services = [
+    {
+      name: "Politi",
+      description: "Patruljearbejde, trafik og efterforskning i et realistisk hierarki.",
+      color: "bg-primary",
+    },
+    {
+      name: "Brandvæsen",
+      description: "Brand og redningsopgaver med fokus på realistiske procedurer.",
+      color: "bg-emergency-red",
+    },
+    {
+      name: "Ambulance",
+      description: "Medicinsk bistand og transport i samarbejde med de andre tjenester.",
+      color: "bg-emergency-yellow",
+    },
+  ];
+
   const values = [
     {
       icon: Shield,
       title: "Integritet",
-      description: "Vi handler med høj moral og ærlighed i alle situationer"
+      description: "Vi handler med høj moral og ærlighed i alle situationer.",
     },
     {
       icon: Users,
       title: "Teamwork",
-      description: "Sammen er vi stærkere - vi støtter hinanden gennem alt"
+      description: "Sammen er vi stærkere - vi støtter hinanden gennem alt.",
     },
     {
       icon: Trophy,
       title: "Excellence",
-      description: "Vi stræber altid efter at levere den bedste service"
-    }
-  ];
-
-  const stats = [
-    { number: "15", label: "Aktive Medlemmer", color: "primary" },
-    { number: "24/7", label: "Service", color: "emergency-red" },
-    { number: "1", label: "År i Drift", color: "emergency-yellow" }
+      description: "Vi stræber altid efter at levere den bedste service.",
+    },
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden min-h-screen">
-        {/* Background Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url(${heroBackground})`,
-            opacity: 0.7
-          }}
-        ></div>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
-        <div className="container mx-auto px-4 relative z-10 flex items-center justify-center min-h-screen">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="flex justify-center mb-12">
-              <img 
-                src={logo} 
-                alt="PROJEKT BLÅ BLINK Logo" 
-                className="h-28 w-28 lg:h-36 lg:w-36 object-contain drop-shadow-2xl"
-              />
-            </div>
-            <Badge variant="secondary" className="mb-8 px-6 py-3 text-sm font-medium">
-              OFFICIEL EMERGENCY SERVICES ROLEPLAY
-            </Badge>
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
-              PROJEKT
-              <span className="text-primary block lg:inline lg:ml-4">BLÅ BLINK</span>
+    <div>
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-border">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-foreground/70" aria-hidden="true" />
+        <div className="container relative py-24 lg:py-36">
+          <div className="max-w-3xl">
+            <img
+              src={logo}
+              alt="PROJEKT BLÅ BLINK Logo"
+              className="h-16 w-16 lg:h-20 lg:w-20 object-contain mb-8"
+            />
+            <h1 className="font-display text-6xl lg:text-8xl font-semibold uppercase leading-none tracking-wide text-white">
+              Projekt Blå Blink
             </h1>
-            <p className="text-xl lg:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
+            <p className="mt-6 max-w-2xl text-lg lg:text-xl text-white/90 leading-relaxed">
               Et professionelt emergency services community. Vi tilbyder politi,
               brandvæsen og ambulance tjeneste i et realistisk FiveM miljø.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="mt-10 flex flex-wrap items-center gap-6">
               <Link to="/ansog">
-                <Button size="lg" className="text-lg px-10 py-4">
-                  <Shield className="w-5 h-5 mr-2" />
-                  Bliv en del af teamet
+                <Button size="lg" className="px-8">
+                  Søg om optagelse
                 </Button>
               </Link>
-              <Link to="/om-os">
-                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm ">
-                  <Users className="w-6 h-6 mr-3" />
-                  <span className="flex flex-col items-start">
-                    <span className="font-semibold">Lær mere om os</span>
-                    <span className="text-sm opacity-90">Vores mission & værdier</span>
-                  </span>
-                </Button>
+              <Link
+                to="/om-os"
+                className="inline-flex items-center gap-2 text-base font-medium text-white underline-offset-4 hover:underline"
+              >
+                Læs om projektet
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-muted/60">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {stats.map((stat, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-8 pb-8">
-                  <div className={`text-4xl lg:text-5xl font-bold mb-2 ${
-                    stat.color === 'primary' ? 'text-primary' :
-                    stat.color === 'emergency-red' ? 'text-emergency-red' :
-                    'text-emergency-yellow'
-                  }`}>
-                    {stat.number}
-                  </div>
-                  <p className="text-muted-foreground font-medium">{stat.label}</p>
-                </CardContent>
-              </Card>
+      {/* Tjenester */}
+      <section className="container py-20">
+        <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
+          <div>
+            <h2 className="font-display text-3xl lg:text-4xl font-semibold uppercase tracking-wide mb-6">
+              Hvad er Projekt Blå Blink?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Vi er et dansk FiveM fællesskab, der spiller emergency services
+              så tæt på virkeligheden som muligt — med realistiske procedurer,
+              klare ansvarsområder og respekt for hinanden.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Nye medlemmer starter typisk som kadet og avancerer gennem
+              rangordenen efter erfaring og engagement. Læs mere på siden{" "}
+              <Link to="/om-os" className="text-primary underline-offset-4 hover:underline">
+                Om os
+              </Link>
+              .
+            </p>
+          </div>
+          <ul className="divide-y divide-border border-t border-b border-border">
+            {services.map((service) => (
+              <li key={service.name} className="flex items-start gap-4 py-6">
+                <span className={`mt-1.5 h-3 w-3 flex-shrink-0 rounded-sm ${service.color}`} aria-hidden="true" />
+                <div>
+                  <h3 className="font-display text-xl font-semibold uppercase tracking-wide">
+                    {service.name}
+                  </h3>
+                  <p className="mt-1 text-muted-foreground leading-relaxed">{service.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* Værdier */}
+      <section className="border-t border-border bg-muted/60 py-20">
+        <div className="container">
+          <h2 className="font-display text-3xl lg:text-4xl font-semibold uppercase tracking-wide mb-10">
+            Vores værdier
+          </h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            {values.map((value) => (
+              <div key={value.title} className="border-t-2 border-primary pt-6">
+                <value.icon className="w-6 h-6 text-primary mb-3" aria-hidden="true" />
+                <h3 className="font-semibold text-foreground mb-2">{value.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{value.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Vores Værdier
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Disse grundlæggende principper guider vores arbejde og samarbejde hver dag
-            </p>
+      {/* Kontakt */}
+      <section className="container py-20">
+        <div className="border border-border bg-card p-8 lg:p-12">
+          <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="max-w-xl">
+              <h2 className="font-display text-3xl font-semibold uppercase tracking-wide mb-4">
+                Kom i kontakt med os
+              </h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Det meste af vores aktivitet foregår på vores Discord server —
+                spørgsmål, ansøgninger og alle beskeder om serveren samles der.
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <a
+                href="https://discord.gg/BHev4WJf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                  <ExternalLink className="w-4 h-4 mr-2" aria-hidden="true" />
+                  Besøg vores Discord
+                </Button>
+              </a>
+              <Link to="/ansog" className="sm:hidden lg:block">
+                <Button size="lg" className="w-full sm:w-auto">
+                  Søg om optagelse
+                </Button>
+              </Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value, index) => (
-              <Card key={index} className="hover:transition-colors">
-                <CardContent className="pt-8 pb-8 text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <value.icon className="w-8 h-8 text-primary-foreground" />
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-4">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="py-20 bg-muted/60">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Kontakt Os
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Vi er her for at hjælpe dig med at komme i gang
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <a href="https://discord.gg/BHev4WJf" target="_blank" rel="noopener noreferrer">
-              <Card className="bg-card text-center hover:transition-colors cursor-pointer ">
-                <CardContent className="pt-6 pb-6">
-                  <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
-                  <h3 className="font-semibold text-foreground mb-2">Discord Server</h3>
-                  <p className="text-muted-foreground text-sm">Tilslut dig vores community</p>
-                </CardContent>
-              </Card>
-            </a>
-            <Card className="bg-card text-center">
-              <CardContent className="pt-6 pb-6">
-                <MapPin className="w-8 h-8 text-emergency-red mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">FiveM Server</h3>
-                <p className="text-muted-foreground text-sm">Join vores in-game server</p>
-              </CardContent>
-            </Card>
-            <Card className="bg-card text-center">
-              <CardContent className="pt-6 pb-6">
-                <Clock className="w-8 h-8 text-emergency-yellow mx-auto mb-4" />
-                <h3 className="font-semibold text-foreground mb-2">24/7 Support</h3>
-                <p className="text-muted-foreground text-sm">Vi er altid her for dig</p>
-              </CardContent>
-            </Card>
-          </div>
-          <div className="text-center mt-12">
-            <Link to="/ansog">
-              <Button size="lg" className="text-lg px-8">
-                Start Din Ansøgning
-              </Button>
-            </Link>
-          </div>
+          <p className="mt-8 border-t border-border pt-6 text-sm text-muted-foreground">
+            Regler, vilkår og vores privatlivspolitik finder du i sidefoden på
+            alle sider.
+          </p>
         </div>
       </section>
     </div>
