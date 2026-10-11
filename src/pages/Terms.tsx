@@ -1,7 +1,7 @@
 import LegalPage from "@/components/LegalPage";
 
 const P = ({ children }: { children: React.ReactNode }) => (
-  <span className="font-medium text-foreground bg-muted px-1 rounded">{children}</span>
+  <span className="font-medium text-foreground">{children}</span>
 );
 
 const Terms = () => (
@@ -24,7 +24,7 @@ const Terms = () => (
         body: (
           <p>
             PROJEKT BLÅ BLINK er et fiktivt rollespilsfællesskab. Vi er ikke en del af, godkendt af eller tilknyttet
-            Rigspolitiet, Nordjyllands Politi, beredskabet, regioner eller andre offentlige myndigheder. Intet på siden
+            Rigspolitiet, dansk eller udenlandsk politi, beredskabet, regioner eller andre offentlige myndigheder. Intet på siden
             må bruges til at udgive sig for at være offentlig myndighed.
           </p>
         ),

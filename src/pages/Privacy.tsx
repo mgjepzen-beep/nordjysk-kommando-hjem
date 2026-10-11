@@ -1,7 +1,7 @@
 import LegalPage from "@/components/LegalPage";
 
 const P = ({ children }: { children: React.ReactNode }) => (
-  <span className="font-medium text-foreground bg-muted px-1 rounded">{children}</span>
+  <span className="font-medium text-foreground">{children}</span>
 );
 
 const Privacy = () => (

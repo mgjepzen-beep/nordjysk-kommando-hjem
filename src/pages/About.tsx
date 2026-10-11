@@ -57,7 +57,7 @@ const About = () => {
     {
       icon: Target,
       title: "Mission",
-      description: "At skabe den mest realistiske emergency services oplevelse i Nordjylland"
+      description: "At skabe den mest realistiske emergency services oplevelse i FiveM"
     }
   ];
 
@@ -73,7 +73,7 @@ const About = () => {
             Hvem Er Vi?
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            PROJEKT BLÅ BLINK er Nordjyllands førende emergency services community. Vi er dedikeret til at 
+            PROJEKT BLÅ BLINK er et emergency services community. Vi er dedikeret til at 
             levere en autentisk og professionel roleplay oplevelse med fokus på realisme, teamwork og 
             respekt for hinanden.
           </p>
@@ -140,7 +140,7 @@ const About = () => {
             <CardContent className="p-8 lg:p-12">
               <h2 className="text-2xl lg:text-3xl font-bold mb-6">Vores Mission</h2>
               <p className="text-lg lg:text-xl leading-relaxed opacity-95">
-                "At skabe Nordjyllands mest realistiske og professionelle emergency services community, 
+                "At skabe det mest realistiske og professionelle emergency services community, 
                 hvor hvert medlem kan udvikle deres færdigheder, bygge meningsfulde relationer og 
                 bidrage til en positiv gaming oplevelse for alle."
               </p>
