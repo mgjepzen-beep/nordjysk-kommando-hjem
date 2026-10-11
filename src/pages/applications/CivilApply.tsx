@@ -9,7 +9,7 @@ import { ArrowLeft, Eye, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { civilApplicationSchema, sanitizeInput, checkRateLimit } from "@/lib/validation";
+import { civilApplicationSchema, sanitizeInput } from "@/lib/validation";
 import { ZodError } from "zod";
 
 const CivilApply = () => {
@@ -32,11 +32,6 @@ const CivilApply = () => {
     setValidationErrors({});
 
     try {
-      // Rate limiting check
-      const clientId = `${navigator.userAgent}-${Date.now()}`;
-      if (!checkRateLimit(clientId, 3, 300000)) { // 3 attempts per 5 minutes
-        throw new Error('For mange forsøg. Vent venligst før du prøver igen.');
-      }
 
       // Sanitize input data
       const sanitizedData = {
