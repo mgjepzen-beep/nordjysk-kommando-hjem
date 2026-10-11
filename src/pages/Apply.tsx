@@ -298,7 +298,6 @@ const Apply = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
     </div>
   );
 };
