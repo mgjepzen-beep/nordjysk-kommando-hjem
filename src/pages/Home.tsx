@@ -55,15 +55,15 @@ const Home = () => {
               />
             </div>
             <Badge variant="secondary" className="mb-8 px-6 py-3 text-sm font-medium">
-              OFFICIEL NORDJYLLANDS EMERGENCY SERVICES
+              OFFICIEL EMERGENCY SERVICES ROLEPLAY
             </Badge>
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
               PROJEKT
               <span className="text-primary block lg:inline lg:ml-4">BLÅ BLINK</span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
-              Nordjyllands førende emergency services community. Vi tilbyder professionel politi, 
-              brandvæsen og ambulance tjeneste i en realistisk FiveM miljø.
+              Et professionelt emergency services community. Vi tilbyder politi,
+              brandvæsen og ambulance tjeneste i et realistisk FiveM miljø.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/ansog">
