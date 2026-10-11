@@ -279,10 +279,9 @@ const Apply = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full text-lg"
+                className="w-full text-base"
                 disabled={isLoading}
               >
-                <CheckCircle className="w-5 h-5 mr-2" />
                 {isLoading ? "Sender..." : "Send Ansøgning"}
               </Button>
             </form>
@@ -292,7 +291,7 @@ const Apply = () => {
         {/* Next Steps */}
         <Card className="mt-8 bg-muted/60">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-foreground mb-4">Hvad sker der nu?</h3>
+            <h3 className="font-semibold text-foreground mb-4">Hvad sker der nu?</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>1. Vi gennemgår din ansøgning (24-48 timer)</p>
               <p>2. Du bliver kontaktet på Discord for et interview</p>
