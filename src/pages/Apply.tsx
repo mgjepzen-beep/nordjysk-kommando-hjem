@@ -123,8 +123,7 @@ const Apply = () => {
         {/* Application Form */}
         <Card className="bg-card">
           <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <FileText className="w-6 h-6 text-primary" />
+            <CardTitle className="font-display text-2xl font-semibold uppercase tracking-wide">
               Ansøgningsformular
             </CardTitle>
           </CardHeader>
@@ -132,9 +131,8 @@ const Apply = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <User className="w-5 h-5 text-primary" />
-                  Personlige Oplysninger
+                <h3 className="font-semibold text-foreground">
+                  Personlige oplysninger
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -167,8 +165,7 @@ const Apply = () => {
 
               {/* Contact Information */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground">
                   Kontaktoplysninger
                 </h3>
                 
@@ -211,9 +208,8 @@ const Apply = () => {
 
               {/* Position & Experience */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  Stilling & Erfaring
+                <h3 className="font-semibold text-foreground">
+                  Stilling & erfaring
                 </h3>
                 
                 <div className="space-y-2">
