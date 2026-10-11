@@ -113,7 +113,7 @@ const EmsRankings = () => {
               <Card key={index} className="hover:transition-colors">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mb-4">
+                    <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
                       <Heart className="w-8 h-8 text-white" />
                     </div>
                     <CardTitle className="text-lg mb-2">{rank.rank}</CardTitle>
@@ -174,7 +174,7 @@ const EmsRankings = () => {
 
         {/* Information Box */}
         <div className="mt-16">
-          <Card className="bg-gradient-to-br from-primary to-accent text-foreground">
+          <Card className="bg-card">
             <CardContent className="p-8 text-center">
               <Heart className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4">EMS Mission</h3>

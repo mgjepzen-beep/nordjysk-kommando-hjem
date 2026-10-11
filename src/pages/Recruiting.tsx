@@ -218,7 +218,7 @@ const Recruiting = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="bg-gradient-emergency text-primary-foreground max-w-2xl mx-auto">
+          <Card className="bg-card max-w-2xl mx-auto">
             <CardContent className="p-8">
               <CheckCircle className="w-16 h-16 mx-auto mb-6" />
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">
