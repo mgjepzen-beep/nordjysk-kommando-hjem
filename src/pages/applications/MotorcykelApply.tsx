@@ -92,7 +92,7 @@ const MotorcykelApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive Motorcykel Betjent. 
             Vi ser frem til at høre om din køreerfaring og passion for trafiksikkerhed.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">

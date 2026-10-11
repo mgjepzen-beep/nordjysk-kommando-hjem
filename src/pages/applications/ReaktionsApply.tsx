@@ -92,7 +92,7 @@ const ReaktionsApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive del af Reaktions Patruljen. 
             Vi ser frem til at høre om din evne til hurtig respons og arbejde under pres.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">

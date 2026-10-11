@@ -135,7 +135,7 @@ const AktionApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive del af vores elite Aktions Styrke. 
             Dette er vores mest krævende position og kræver exceptionelle kvalifikationer.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">

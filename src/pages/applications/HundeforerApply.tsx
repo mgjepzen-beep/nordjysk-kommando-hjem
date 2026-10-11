@@ -92,7 +92,7 @@ const HundeforerApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive Hundefører. 
             Vi ser frem til at høre om din passion for at arbejde med hunde.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">

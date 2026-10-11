@@ -135,7 +135,7 @@ const CivilApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive del af Civil Patruljen. 
             Vi ser frem til at høre om din evne til diskret arbejde og observation.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">
