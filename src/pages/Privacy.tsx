@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Privacy = () => (
   <LegalPage
     title="Privatlivspolitik"
-    updated="10/12/2026"
+    updated="11/10/2026"
     intro="Her kan du læse, hvilke oplysninger PROJEKT BLÅ BLINK indsamler, hvorfor vi gør det, og hvilke rettigheder du har efter databeskyttelsesforordningen (GDPR)."
     sections={[
       {

@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Terms = () => (
   <LegalPage
     title="Vilkår og juridisk information"
-    updated="10/12/2026"
+    updated="11/10/2026"
     intro="Information om hvem der driver siden, regler for brug og forbehold vedrørende varemærker og spilindhold."
     sections={[
       {
