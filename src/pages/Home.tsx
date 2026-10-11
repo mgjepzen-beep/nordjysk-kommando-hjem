@@ -50,7 +50,7 @@ const Home = () => {
             <div className="flex justify-center mb-12">
               <img 
                 src={logo} 
-                alt="NORDJYSK FIVEPD Logo" 
+                alt="PROJEKT BLÅ BLINK Logo" 
                 className="h-28 w-28 lg:h-36 lg:w-36 object-contain drop-shadow-2xl"
               />
             </div>

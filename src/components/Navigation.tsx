@@ -36,7 +36,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src={logo} 
-              alt="NORDJYSK FIVEPD Logo" 
+              alt="PROJEKT BLÅ BLINK Logo" 
               className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col">

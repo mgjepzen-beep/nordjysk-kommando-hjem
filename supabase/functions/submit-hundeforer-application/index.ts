@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "🐾 Erfaring med dyr", value: c(d.animalExperience), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - K9 Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - K9 Ansøgning" },
   }),
 }));

@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "🏍️ Køreerfaring", value: c(d.drivingExperience), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - MIKE Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - MIKE Ansøgning" },
   }),
 }));

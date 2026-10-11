@@ -23,7 +23,7 @@ const Terms = () => (
         title: "Fiktivt rollespil",
         body: (
           <p>
-            NORDJYSK FIVEPD er et fiktivt rollespilsfællesskab. Vi er ikke en del af, godkendt af eller tilknyttet
+            PROJEKT BLÅ BLINK er et fiktivt rollespilsfællesskab. Vi er ikke en del af, godkendt af eller tilknyttet
             Rigspolitiet, Nordjyllands Politi, beredskabet, regioner eller andre offentlige myndigheder. Intet på siden
             må bruges til at udgive sig for at være offentlig myndighed.
           </p>

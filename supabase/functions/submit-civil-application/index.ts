@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "🤫 Diskret arbejde", value: c(d.discretion), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - CHARLIE Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - CHARLIE Ansøgning" },
   }),
 }));
