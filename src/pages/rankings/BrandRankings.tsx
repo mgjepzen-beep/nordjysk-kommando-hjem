@@ -87,7 +87,7 @@ const BrandRankings = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {brandRanks.map((rank, index) => (
-              <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="hover:transition-colors">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-16 h-16 bg-gradient-to-br from-emergency-red to-emergency-yellow rounded-full flex items-center justify-center mb-4">
@@ -120,13 +120,13 @@ const BrandRankings = () => {
         </div>
 
         {/* Special Units */}
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
             Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {brandUnits.map((unit, index) => (
-              <Card key={index} className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="text-center hover:transition-colors">
                 <CardContent className="pt-8 pb-8">
                   <div className="mb-6">
                     <Badge 
@@ -150,7 +150,7 @@ const BrandRankings = () => {
 
         {/* Information Box */}
         <div className="mt-16">
-          <Card className="border-none shadow-emergency bg-gradient-to-br from-emergency-red to-emergency-yellow text-white">
+          <Card className="bg-gradient-to-br from-emergency-red to-emergency-yellow text-white">
             <CardContent className="p-8 text-center">
               <Flame className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4">Brandvæsenets Mission</h3>

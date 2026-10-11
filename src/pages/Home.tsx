@@ -67,13 +67,13 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/ansog">
-                <Button size="lg" className="bg-gradient-hero shadow-professional text-lg px-10 py-4">
+                <Button size="lg" className="text-lg px-10 py-4">
                   <Shield className="w-5 h-5 mr-2" />
                   Bliv en del af teamet
                 </Button>
               </Link>
               <Link to="/om-os">
-                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm hover-scale">
+                <Button variant="outline" size="lg" className="text-lg px-10 py-4 border-white/40 text-white hover:bg-white/15 backdrop-blur-sm ">
                   <Users className="w-6 h-6 mr-3" />
                   <span className="flex flex-col items-start">
                     <span className="font-semibold">Lær mere om os</span>
@@ -87,11 +87,11 @@ const Home = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card/50">
+      <section className="py-16 bg-muted/60">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center border-none shadow-professional">
+              <Card key={index} className="text-center">
                 <CardContent className="pt-8 pb-8">
                   <div className={`text-4xl lg:text-5xl font-bold mb-2 ${
                     stat.color === 'primary' ? 'text-primary' :
@@ -121,9 +121,9 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="hover:transition-colors">
                 <CardContent className="pt-8 pb-8 text-center">
-                  <div className="bg-gradient-hero w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                     <value.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">{value.title}</h3>
@@ -136,7 +136,7 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 bg-card/50">
+      <section className="py-20 bg-muted/60">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
@@ -148,7 +148,7 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <a href="https://discord.gg/BHev4WJf" target="_blank" rel="noopener noreferrer">
-              <Card className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale">
+              <Card className="bg-card text-center hover:transition-colors cursor-pointer ">
                 <CardContent className="pt-6 pb-6">
                   <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold text-foreground mb-2">Discord Server</h3>
@@ -156,14 +156,14 @@ const Home = () => {
                 </CardContent>
               </Card>
             </a>
-            <Card className="border-none shadow-professional text-center">
+            <Card className="bg-card text-center">
               <CardContent className="pt-6 pb-6">
                 <MapPin className="w-8 h-8 text-emergency-red mx-auto mb-4" />
                 <h3 className="font-semibold text-foreground mb-2">FiveM Server</h3>
                 <p className="text-muted-foreground text-sm">Join vores in-game server</p>
               </CardContent>
             </Card>
-            <Card className="border-none shadow-professional text-center">
+            <Card className="bg-card text-center">
               <CardContent className="pt-6 pb-6">
                 <Clock className="w-8 h-8 text-emergency-yellow mx-auto mb-4" />
                 <h3 className="font-semibold text-foreground mb-2">24/7 Support</h3>
@@ -173,7 +173,7 @@ const Home = () => {
           </div>
           <div className="text-center mt-12">
             <Link to="/ansog">
-              <Button size="lg" className="bg-gradient-emergency shadow-emergency text-lg px-8">
+              <Button size="lg" className="text-lg px-8">
                 Start Din Ansøgning
               </Button>
             </Link>

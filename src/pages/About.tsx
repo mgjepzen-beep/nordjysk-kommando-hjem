@@ -82,7 +82,7 @@ const About = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           {services.map((service, index) => (
-            <Card key={index} className="overflow-hidden border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+            <Card key={index} className="overflow-hidden hover:transition-colors">
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={service.image} 
@@ -112,7 +112,7 @@ const About = () => {
         </div>
 
         {/* About Points */}
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
               Hvad Gør Os Specielle?
@@ -124,7 +124,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {aboutPoints.map((point, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gradient-hero w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <point.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-3">{point.title}</h3>
@@ -136,7 +136,7 @@ const About = () => {
 
         {/* Mission Statement */}
         <div className="text-center mt-20">
-          <Card className="border-none shadow-emergency bg-gradient-hero text-primary-foreground max-w-4xl mx-auto">
+          <Card className="bg-card max-w-4xl mx-auto">
             <CardContent className="p-8 lg:p-12">
               <h2 className="text-2xl lg:text-3xl font-bold mb-6">Vores Mission</h2>
               <p className="text-lg lg:text-xl leading-relaxed opacity-95">

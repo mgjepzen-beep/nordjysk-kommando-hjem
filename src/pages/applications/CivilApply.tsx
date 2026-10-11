@@ -138,7 +138,7 @@ const CivilApply = () => {
         </div>
 
         {/* Application Form */}
-        <Card className="border-none shadow-professional">
+        <Card className="bg-card">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-foreground flex items-center">
               <Eye className="w-6 h-6 mr-3 text-primary" />
@@ -242,7 +242,7 @@ const CivilApply = () => {
                   type="submit" 
                   size="lg" 
                   disabled={isSubmitting}
-                  className="bg-gradient-hero shadow-emergency text-lg px-12"
+                  className="text-lg px-12"
                 >
                   {isSubmitting ? (
                     "Sender..."

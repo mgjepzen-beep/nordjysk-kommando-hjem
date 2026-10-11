@@ -122,7 +122,7 @@ const Apply = () => {
         </div>
 
         {/* Application Form */}
-        <Card className="border-none shadow-professional">
+        <Card className="bg-card">
           <CardHeader>
             <CardTitle className="text-2xl flex items-center gap-2">
               <FileText className="w-6 h-6 text-primary" />
@@ -284,7 +284,7 @@ const Apply = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-gradient-emergency shadow-emergency text-lg"
+                className="w-full text-lg"
                 disabled={isLoading}
               >
                 <CheckCircle className="w-5 h-5 mr-2" />
@@ -295,7 +295,7 @@ const Apply = () => {
         </Card>
 
         {/* Next Steps */}
-        <Card className="mt-8 border-none shadow-professional bg-card/50">
+        <Card className="mt-8 bg-muted/60">
           <CardContent className="p-6">
             <h3 className="text-lg font-semibold text-foreground mb-4">Hvad sker der nu?</h3>
             <div className="space-y-2 text-muted-foreground">

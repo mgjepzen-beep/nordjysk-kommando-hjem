@@ -125,7 +125,7 @@ const AktionApply = () => {
 
         {/* Header */}
         <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-primary text-primary-foreground">
+          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-primary text-foreground">
             AKS - ANSØGNING
           </Badge>
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -138,7 +138,7 @@ const AktionApply = () => {
         </div>
 
         {/* Application Form */}
-        <Card className="border-none shadow-professional">
+        <Card className="bg-card">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-foreground flex items-center">
               <Target className="w-6 h-6 mr-3 text-primary" />
@@ -276,7 +276,7 @@ const AktionApply = () => {
                   type="submit" 
                   size="lg" 
                   disabled={isSubmitting}
-                  className="bg-gradient-hero shadow-emergency text-lg px-12"
+                  className="text-lg px-12"
                 >
                   {isSubmitting ? (
                     "Sender..."

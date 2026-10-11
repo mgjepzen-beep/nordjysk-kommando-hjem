@@ -136,7 +136,7 @@ const Recruiting = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {positions.map((position, index) => (
-              <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="hover:transition-colors">
                 <CardHeader>
                   <div className="flex items-center justify-center">
                     <position.icon className={`w-8 h-8 ${
@@ -161,13 +161,13 @@ const Recruiting = () => {
         </div>
 
         {/* Requirements */}
-        <div className="mb-16 bg-card/50 rounded-2xl p-8 lg:p-12">
+        <div className="mb-16 bg-muted/60 rounded-2xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
             Krav & Forventninger
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {requirements.map((req, index) => (
-              <Card key={index} className={`border-none shadow-professional ${
+              <Card key={index} className={`${
                 req.type === 'essential' ? 'ring-2 ring-primary/20' : ''
               }`}>
                 <CardContent className="pt-6 pb-6 text-center">
@@ -196,10 +196,10 @@ const Recruiting = () => {
           </h2>
           <div className="space-y-6">
             {applicationSteps.map((step, index) => (
-              <Card key={index} className="border-none shadow-professional">
+              <Card key={index} className="border-none">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
-                    <div className="bg-gradient-hero w-10 h-10 rounded-full flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-primary-foreground font-bold flex-shrink-0">
                       {step.step}
                     </div>
                     <div className="flex-1">
@@ -218,7 +218,7 @@ const Recruiting = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="border-none shadow-emergency bg-gradient-emergency text-primary-foreground max-w-2xl mx-auto">
+          <Card className="bg-gradient-emergency text-primary-foreground max-w-2xl mx-auto">
             <CardContent className="p-8">
               <CheckCircle className="w-16 h-16 mx-auto mb-6" />
               <h2 className="text-2xl lg:text-3xl font-bold mb-4">

@@ -224,7 +224,7 @@ const Rankings = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {policeInsigniaGroups.map((group, groupIndex) => (
-              <Card key={groupIndex} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={groupIndex} className="hover:transition-colors">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <img 
@@ -265,7 +265,7 @@ const Rankings = () => {
         </div>
 
         {/* Special Units */}
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
+        <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
           <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
             Specialenheder
           </h2>
@@ -282,7 +282,7 @@ const Rankings = () => {
               
               return (
                 <Link key={index} to={unitRoutes[unit.name]} className="block">
-                  <Card className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale">
+                  <Card className="bg-card text-center hover:transition-colors cursor-pointer ">
                     <CardContent className="pt-8 pb-8">
                       <div className="mb-6">
                         <Badge 
@@ -308,7 +308,7 @@ const Rankings = () => {
 
         {/* Information Box */}
         <div className="mt-16">
-          <Card className="border-none shadow-emergency bg-gradient-hero text-primary-foreground">
+          <Card className="bg-card">
             <CardContent className="p-8 text-center">
               <Shield className="w-12 h-12 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4">Forfremmelse System</h3>
