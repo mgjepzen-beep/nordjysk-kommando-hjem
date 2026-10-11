@@ -78,7 +78,7 @@ const EmsRankings = () => {
 
   return (
     <div 
-      className="min-h-screen py-20 relative"
+      className="relative py-16 lg:py-24"
       style={{
         backgroundImage: `url(${emsBackground})`,
         backgroundSize: 'cover',
@@ -110,7 +110,7 @@ const EmsRankings = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {emsRanks.map((rank, index) => (
-              <Card key={index} className="">
+              <Card key={index} className="bg-card">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">

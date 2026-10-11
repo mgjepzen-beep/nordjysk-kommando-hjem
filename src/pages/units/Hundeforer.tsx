@@ -39,7 +39,7 @@ const Hundeforer = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="container px-4 py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-8">
@@ -72,7 +72,7 @@ const Hundeforer = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {responsibilities.map((resp, index) => (
-              <Card key={index} className="">
+              <Card key={index} className="bg-card">
                 <CardContent className="pt-8 pb-8 text-center">
                   <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <resp.icon className="w-8 h-8 text-primary" />

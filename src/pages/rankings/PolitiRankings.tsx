@@ -192,7 +192,7 @@ const Rankings = () => {
 
   return (
     <div 
-      className="min-h-screen py-20 relative"
+      className="relative py-16 lg:py-24"
       style={{
         backgroundImage: `url(${politiBackground})`,
         backgroundSize: 'cover',
@@ -224,7 +224,7 @@ const Rankings = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {policeInsigniaGroups.map((group, groupIndex) => (
-              <Card key={groupIndex} className="">
+              <Card key={groupIndex} className="bg-card">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <img 
