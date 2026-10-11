@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "🛡️ Særlige færdigheder", value: c(d.specialSkills), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - AKS Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - AKS Ansøgning" },
   }),
 }));

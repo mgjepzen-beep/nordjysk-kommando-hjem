@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "👥 Ledererfaring", value: c(d.leadership), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - Indsatsleder Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - Indsatsleder Ansøgning" },
   }),
 }));

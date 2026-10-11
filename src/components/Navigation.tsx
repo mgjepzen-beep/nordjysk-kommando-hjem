@@ -36,12 +36,12 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img 
               src={logo} 
-              alt="NORDJYSK FIVEPD Logo" 
+              alt="PROJEKT BLÅ BLINK Logo" 
               className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground">NORDJYSK</span>
-              <span className="text-sm text-primary font-semibold">FIVEPD</span>
+              <span className="text-lg font-bold text-foreground">PROJEKT</span>
+              <span className="text-sm text-primary font-semibold">BLÅ BLINK</span>
             </div>
           </Link>
 

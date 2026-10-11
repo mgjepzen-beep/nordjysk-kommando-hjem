@@ -67,13 +67,13 @@ const About = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2">
-            OM NORDJYSK FIVEPD
+            OM PROJEKT BLÅ BLINK
           </Badge>
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Hvem Er Vi?
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-            NORDJYSK FIVEPD er Nordjyllands førende emergency services community. Vi er dedikeret til at 
+            PROJEKT BLÅ BLINK er Nordjyllands førende emergency services community. Vi er dedikeret til at 
             levere en autentisk og professionel roleplay oplevelse med fokus på realisme, teamwork og 
             respekt for hinanden.
           </p>

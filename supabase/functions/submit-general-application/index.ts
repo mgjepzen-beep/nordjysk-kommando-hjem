@@ -20,7 +20,7 @@ Deno.serve(createApplicationHandler({
   schema,
   content: "🆕 **Ny ansøgning modtaget!**",
   buildEmbed: (d, c) => ({
-    title: "🔥 Ny Ansøgning - NORDJYSK FIVEPD",
+    title: "🔥 Ny Ansøgning - PROJEKT BLÅ BLINK",
     color: 0x3b82f6,
     fields: [
       { name: "📛 Navn", value: c(d.fullName), inline: true },
@@ -33,6 +33,6 @@ Deno.serve(createApplicationHandler({
       { name: "💡 Motivation", value: c(d.motivation), inline: false },
       { name: "🕒 Tilgængelighed", value: d.availability ? c(d.availability) : "Ikke angivet", inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD Rekruttering" },
+    footer: { text: "PROJEKT BLÅ BLINK Rekruttering" },
   }),
 }));

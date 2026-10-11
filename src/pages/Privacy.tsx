@@ -8,13 +8,13 @@ const Privacy = () => (
   <LegalPage
     title="Privatlivspolitik"
     updated="10/12/2026"
-    intro="Her kan du læse, hvilke oplysninger NORDJYSK FIVEPD indsamler, hvorfor vi gør det, og hvilke rettigheder du har efter databeskyttelsesforordningen (GDPR)."
+    intro="Her kan du læse, hvilke oplysninger PROJEKT BLÅ BLINK indsamler, hvorfor vi gør det, og hvilke rettigheder du har efter databeskyttelsesforordningen (GDPR)."
     sections={[
       {
         title: "Dataansvarlig",
         body: (
           <p>
-            Den dataansvarlige er <P>Mikkel Gottlieb</P>, kontakt: <P>mgjepzen@gmail.com</P>. NORDJYSK FIVEPD er et
+            Den dataansvarlige er <P>Mikkel Gottlieb</P>, kontakt: <P>mgjepzen@gmail.com</P>. PROJEKT BLÅ BLINK er et
             fiktivt rollespilsfællesskab og har ingen tilknytning til Rigspolitiet, beredskabet eller andre myndigheder.
           </p>
         ),

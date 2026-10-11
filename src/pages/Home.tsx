@@ -50,7 +50,7 @@ const Home = () => {
             <div className="flex justify-center mb-12">
               <img 
                 src={logo} 
-                alt="NORDJYSK FIVEPD Logo" 
+                alt="PROJEKT BLÅ BLINK Logo" 
                 className="h-28 w-28 lg:h-36 lg:w-36 object-contain drop-shadow-2xl"
               />
             </div>
@@ -58,8 +58,8 @@ const Home = () => {
               OFFICIEL NORDJYLLANDS EMERGENCY SERVICES
             </Badge>
             <h1 className="text-5xl lg:text-7xl font-bold text-white mb-8 leading-tight drop-shadow-2xl">
-              NORDJYSK
-              <span className="text-primary block lg:inline lg:ml-4">FIVEPD</span>
+              PROJEKT
+              <span className="text-primary block lg:inline lg:ml-4">BLÅ BLINK</span>
             </h1>
             <p className="text-xl lg:text-2xl text-white/95 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
               Nordjyllands førende emergency services community. Vi tilbyder professionel politi, 

@@ -26,6 +26,6 @@ Deno.serve(createApplicationHandler({
       { name: "💪 Stress håndtering", value: c(d.stressHandling), inline: false },
       { name: "📅 Tilgængelighed", value: c(d.availability), inline: false },
     ],
-    footer: { text: "NORDJYSK FIVEPD - ROMEO Ansøgning" },
+    footer: { text: "PROJEKT BLÅ BLINK - ROMEO Ansøgning" },
   }),
 }));

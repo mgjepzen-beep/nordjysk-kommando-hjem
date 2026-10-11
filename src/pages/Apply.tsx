@@ -117,7 +117,7 @@ const Apply = () => {
             Bliv En Del Af Teamet
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Udfyld ansøgningsformularen nedenfor for at starte din rejse hos NORDJYSK FIVEPD
+            Udfyld ansøgningsformularen nedenfor for at starte din rejse hos PROJEKT BLÅ BLINK
           </p>
         </div>
 
@@ -245,7 +245,7 @@ const Apply = () => {
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="motivation">Hvorfor vil du være en del af NORDJYSK FIVEPD? *</Label>
+                  <Label htmlFor="motivation">Hvorfor vil du være en del af PROJEKT BLÅ BLINK? *</Label>
                   <Textarea
                     id="motivation"
                     value={formData.motivation}
