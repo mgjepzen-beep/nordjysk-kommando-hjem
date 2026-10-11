@@ -91,7 +91,7 @@ const Indsatsleder = () => {
           <Card className="bg-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center">
-                <Shield className="w-6 h-6 mr-3 text-primary" />
+                
                 Krav til Stillingen
               </CardTitle>
             </CardHeader>
@@ -111,7 +111,7 @@ const Indsatsleder = () => {
           <Card className="bg-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center">
-                <AlertTriangle className="w-6 h-6 mr-3 text-emergency-red" />
+                
                 Specialudstyr
               </CardTitle>
             </CardHeader>
