@@ -10,6 +10,8 @@ import About from "./pages/About";
 import Recruiting from "./pages/Recruiting";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 // Ranking pages
 import PolitiRankings from "./pages/rankings/PolitiRankings";
@@ -73,7 +75,9 @@ const App = () => {
               <Route path="/ansog/reaktions-patruljen" element={<ReaktionsApply />} />
               <Route path="/ansog/civil-patruljen" element={<CivilApply />} />
               <Route path="/ansog/aktions-styrken" element={<AktionApply />} />
-              
+              <Route path="/privatlivspolitik" element={<Privacy />} />
+              <Route path="/vilkaar" element={<Terms />} />
+
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
