@@ -14,9 +14,8 @@ const Privacy = () => (
         title: "Dataansvarlig",
         body: (
           <p>
-            Den dataansvarlige er <P>[NAVN PÅ ANSVARLIG PERSON / FORENING]</P>, kontakt: <P>mgjepzen@gmail.com</P>.
-            NORDJYSK FIVEPD er et fiktivt rollespilsfællesskab og har ingen tilknytning til Rigspolitiet, beredskabet
-            eller andre myndigheder.
+            Den dataansvarlige er <P>Mikkel Gottlieb</P>, kontakt: <P>mgjepzen@gmail.com</P>. NORDJYSK FIVEPD er et
+            fiktivt rollespilsfællesskab og har ingen tilknytning til Rigspolitiet, beredskabet eller andre myndigheder.
           </p>
         ),
       },
