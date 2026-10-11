@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Terms = () => (
   <LegalPage
     title="Vilkår og juridisk information"
-    updated="10/12/2026"
+    updated="11/10/2026"
     intro="Information om hvem der driver siden, regler for brug og forbehold vedrørende varemærker og spilindhold."
     sections={[
       {
@@ -35,7 +35,7 @@ const Terms = () => (
           <p>
             FiveM, FivePD, Grand Theft Auto og Rockstar Games er varemærker tilhørende deres respektive ejere. Denne
             side er ikke tilknyttet, sponsoreret eller godkendt af Rockstar Games, Take-Two Interactive, Cfx.re eller
-            FivePD. Billeder på siden er <P>Egne billeder som er blevet ingame</P>.
+            FivePD. Billeder på siden er <P>egne billeder taget i spillet (in-game)</P>.
           </p>
         ),
       },

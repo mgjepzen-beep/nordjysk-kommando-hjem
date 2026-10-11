@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Privacy = () => (
   <LegalPage
     title="Privatlivspolitik"
-    updated="10/12/2026"
+    updated="11/10/2026"
     intro="Her kan du læse, hvilke oplysninger PROJEKT BLÅ BLINK indsamler, hvorfor vi gør det, og hvilke rettigheder du har efter databeskyttelsesforordningen (GDPR)."
     sections={[
       {
@@ -71,8 +71,7 @@ const Privacy = () => (
         title: "Alder",
         body: (
           <p>
-            Du skal være mindst 16 år for at ansøge. Er du under 15 år, må du ikke give os personoplysninger uden
-            samtykke fra en forælder.
+            Du skal være mindst 16 år for at ansøge. Er du under 16 år, må du ikke sende os personoplysninger.
           </p>
         ),
       },
