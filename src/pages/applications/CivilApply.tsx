@@ -140,7 +140,7 @@ const CivilApply = () => {
         {/* Application Form */}
         <Card className="bg-card">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center">
+            <CardTitle className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
               <Eye className="w-6 h-6 mr-3 text-primary" />
               Ansøgningsformular
             </CardTitle>
