@@ -124,8 +124,8 @@ const Recruiting = () => {
             Rekruttering
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Vi søger dedikerede individer der ønsker at være en del af Nordjyllands 
-            mest professionelle emergency services community.
+            Vi søger dedikerede individer der ønsker at være en del af et 
+            professionelt emergency services community.
           </p>
         </div>
 
