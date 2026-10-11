@@ -8,6 +8,7 @@
 - Teksten "Egne billeder som er blevet ingame" rettet på vilkårssiden.
 - Knappen "Lær mere om os" på forsiden erstattet af et tydeligt link i nyt design.
 - Designopfriskning: ny typografi (Barlow/Barlow Condensed), dæmpet farvepalet, gradients/skygger/hover-effekter fjernet, fup-statistikker og "24/7 support" fjernet, alle sider gennemgået.
+- Syntaxfejl i ansøgningssiden rettet og alle sider tjekket visuelt i browseren (forside, om os, rekruttering, ansøgning, rangorden, enhed, enhedsansøgning, vilkår).
 
 ## Åbent — venter på dig
 - Slå e-mail oprettelse fra i din Supabase dashboard (kan ikke ændres herfra).
