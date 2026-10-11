@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Shield, Users, AlertTriangle, Radio, ArrowLeft } from "lucide-react";
+import { Users, AlertTriangle, Radio, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Indsatsleder = () => {
