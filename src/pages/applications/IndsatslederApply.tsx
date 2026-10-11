@@ -92,7 +92,7 @@ const IndsatslederApply = () => {
             Udfyld formularen nedenfor for at ansøge om at blive Indsatsleder. 
             Vi ser frem til at høre om dine kvalifikationer og motivation.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">
