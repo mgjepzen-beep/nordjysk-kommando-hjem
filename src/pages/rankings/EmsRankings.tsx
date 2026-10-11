@@ -87,14 +87,14 @@ const EmsRankings = () => {
       }}
     >
       {/* Background overlay for better readability */}
-      <div className="absolute inset-0 bg-background/15 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/70"></div>
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 px-4 py-2">
             RANGORDEN & HIERARKI
           </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             EMS Rangorden
           </h1>
           <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
@@ -105,12 +105,12 @@ const EmsRankings = () => {
 
         {/* EMS Ranks */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             EMS Rangorden
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {emsRanks.map((rank, index) => (
-              <Card key={index} className="hover:transition-colors">
+              <Card key={index} className="">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -144,12 +144,12 @@ const EmsRankings = () => {
 
         {/* Special Units */}
         <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {emsUnits.map((unit, index) => (
-              <Card key={index} className="text-center hover:transition-colors">
+              <Card key={index} className="text-center ">
                 <CardContent className="pt-8 pb-8">
                   <div className="mb-6">
                     <Badge 
@@ -177,7 +177,7 @@ const EmsRankings = () => {
           <Card className="bg-card">
             <CardContent className="p-8 text-center">
               <Heart className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">EMS Mission</h3>
+              <h3 className="font-display text-2xl font-semibold uppercase tracking-wide mb-4">EMS Mission</h3>
               <p className="text-lg leading-relaxed opacity-95">
                 At yde hurtig, professionel præhospital behandling og sikker patient transport. 
                 Vores team er uddannet til at redde liv og give den bedst mulige medicinske pleje i kritiske situationer.

@@ -85,7 +85,7 @@ const IndsatslederApply = () => {
           <Badge variant="secondary" className="mb-4 px-4 py-2 bg-emergency-red text-emergency-red-foreground">
             INDSATS - ANSØGNING
           </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Ansøg til Indsatsleder
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">

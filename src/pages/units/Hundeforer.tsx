@@ -56,7 +56,7 @@ const Hundeforer = () => {
           <Badge variant="secondary" className="mb-4 px-4 py-2 bg-emergency-yellow text-emergency-yellow-foreground">
             K9
           </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Hundefører
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -67,14 +67,14 @@ const Hundeforer = () => {
 
         {/* Responsibilities */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Ansvarsområder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {responsibilities.map((resp, index) => (
-              <Card key={index} className="hover:transition-colors">
+              <Card key={index} className="">
                 <CardContent className="pt-8 pb-8 text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                     <resp.icon className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-4">{resp.title}</h3>
@@ -132,7 +132,7 @@ const Hundeforer = () => {
         <div className="text-center">
           <Card className="bg-card">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">Interesseret i at blive Hundefører?</h3>
+              <h3 className="font-display text-2xl font-semibold uppercase tracking-wide mb-4">Interesseret i at blive Hundefører?</h3>
               <p className="text-lg mb-6 opacity-95">
                 Bliv en del af K9-enheden og arbejd sammen med vores firbenede partnere
               </p>
