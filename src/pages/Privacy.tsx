@@ -7,7 +7,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Privacy = () => (
   <LegalPage
     title="Privatlivspolitik"
-    updated="[DATO]"
+    updated="10/12/2026"
     intro="Her kan du læse, hvilke oplysninger NORDJYSK FIVEPD indsamler, hvorfor vi gør det, og hvilke rettigheder du har efter databeskyttelsesforordningen (GDPR)."
     sections={[
       {
