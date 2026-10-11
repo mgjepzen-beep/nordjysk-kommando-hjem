@@ -2,97 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PROJEKT BLÅ BLINK Design System - Professional Emergency Services Theme
-All colors MUST be HSL for proper theming.
-*/
+/* PROJEKT BLÅ BLINK — restrained Nordic emergency-services theme.
+   Off-white paper, navy charcoal text, one deep blue accent.
+   Emergency red/yellow are reserved for unit/role identifiers only. */
 
 @layer base {
   :root {
-    --background: 220 25% 97%;
-    --foreground: 215 25% 15%;
+    --background: 210 20% 97%;
+    --foreground: 215 30% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 215 30% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 215 30% 13%;
 
-    /* Emergency Services Blue - Professional and trustworthy */
-    --primary: 214 76% 45%;
+    /* Deep service blue — the single accent of the identity */
+    --primary: 214 78% 30%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 214 76% 60%;
 
-    /* Emergency Red - For fire department elements */
-    --emergency-red: 0 85% 50%;
+    /* Unit identifiers */
+    --emergency-red: 0 62% 42%;
     --emergency-red-foreground: 0 0% 100%;
+    --emergency-yellow: 40 88% 42%;
+    --emergency-yellow-foreground: 215 30% 13%;
 
-    /* Emergency Yellow - For ambulance elements */
-    --emergency-yellow: 45 100% 55%;
-    --emergency-yellow-foreground: 215 25% 15%;
+    --secondary: 215 18% 92%;
+    --secondary-foreground: 215 30% 13%;
 
-    --secondary: 215 15% 92%;
-    --secondary-foreground: 215 25% 15%;
+    --muted: 215 16% 94%;
+    --muted-foreground: 215 12% 40%;
 
-    --muted: 215 15% 95%;
-    --muted-foreground: 215 15% 45%;
+    --accent: 214 70% 94%;
+    --accent-foreground: 214 78% 26%;
 
-    --accent: 214 76% 95%;
-    --accent-foreground: 214 76% 25%;
-
-    --destructive: 0 85% 50%;
+    --destructive: 0 72% 46%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 15% 88%;
-    --input: 215 15% 92%;
-    --ring: 214 76% 45%;
+    --border: 215 16% 87%;
+    --input: 215 16% 89%;
+    --ring: 214 78% 30%;
 
-    /* Custom gradients for professional look */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-emergency: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--emergency-red)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --radius: 0.375rem;
 
-    /* Professional shadows */
-    --shadow-professional: 0 4px 20px -4px hsl(var(--primary) / 0.25);
-    --shadow-emergency: 0 8px 30px -8px hsl(var(--primary) / 0.3);
+    --font-sans: "Barlow", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-display: "Barlow Condensed", "Barlow", ui-sans-serif, system-ui, sans-serif;
 
-    --radius: 0.5rem;
+    --shadow-card: 0 1px 2px hsl(215 30% 13% / 0.05);
+    --shadow-raise: 0 10px 24px -16px hsl(215 30% 13% / 0.28);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 215 30% 8%;
+    --background: 215 28% 9%;
     --foreground: 215 15% 92%;
 
-    --card: 215 25% 12%;
+    --card: 215 24% 12%;
     --card-foreground: 215 15% 92%;
 
-    --popover: 215 25% 12%;
+    --popover: 215 24% 12%;
     --popover-foreground: 215 15% 92%;
 
-    --primary: 214 76% 55%;
-    --primary-foreground: 215 30% 8%;
-    --primary-glow: 214 76% 70%;
+    --primary: 214 70% 58%;
+    --primary-foreground: 215 30% 10%;
 
-    --emergency-red: 0 85% 60%;
-    --emergency-red-foreground: 215 30% 8%;
-
-    --emergency-yellow: 45 100% 65%;
-    --emergency-yellow-foreground: 215 30% 8%;
+    --emergency-red: 0 60% 60%;
+    --emergency-red-foreground: 215 30% 10%;
+    --emergency-yellow: 40 85% 60%;
+    --emergency-yellow-foreground: 215 30% 10%;
 
     --secondary: 215 20% 18%;
     --secondary-foreground: 215 15% 92%;
@@ -100,22 +85,19 @@ All colors MUST be HSL for proper theming.
     --muted: 215 20% 15%;
     --muted-foreground: 215 15% 65%;
 
-    --accent: 214 76% 20%;
-    --accent-foreground: 214 76% 85%;
+    --accent: 214 60% 20%;
+    --accent-foreground: 214 70% 85%;
 
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 215 30% 8%;
+    --destructive: 0 72% 58%;
+    --destructive-foreground: 215 30% 10%;
 
     --border: 215 20% 20%;
     --input: 215 20% 18%;
-    --ring: 214 76% 55%;
+    --ring: 214 70% 58%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-emergency: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--emergency-red)));
-    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary)));
+    --shadow-card: 0 1px 2px hsl(215 60% 2% / 0.4);
+    --shadow-raise: 0 10px 24px -16px hsl(215 60% 2% / 0.6);
 
-    --shadow-professional: 0 4px 20px -4px hsl(var(--primary) / 0.4);
-    --shadow-emergency: 0 8px 30px -8px hsl(var(--primary) / 0.5);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -132,7 +114,28 @@ All colors MUST be HSL for proper theming.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01" off;
+  }
+
+  ::selection {
+    @apply bg-primary/90 text-primary-foreground;
   }
 }
