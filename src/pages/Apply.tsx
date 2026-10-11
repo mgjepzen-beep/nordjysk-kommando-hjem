@@ -107,19 +107,18 @@ const Apply = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-2">
-            ANSØGNING
-          </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Bliv En Del Af Teamet
+    <div className="container px-4 py-16 lg:py-24 max-w-3xl">
+        <header className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+            Ansøgning
+          </p>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none mb-4">
+            Bliv en del af teamet
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             Udfyld ansøgningsformularen nedenfor for at starte din rejse hos PROJEKT BLÅ BLINK
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
         <Card className="bg-card">
