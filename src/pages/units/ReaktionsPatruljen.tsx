@@ -111,7 +111,7 @@ const ReaktionsPatruljen = () => {
           <Card className="bg-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center">
-                <Zap className="w-6 h-6 mr-3 text-emergency-red" />
+                
                 Specialudstyr
               </CardTitle>
             </CardHeader>

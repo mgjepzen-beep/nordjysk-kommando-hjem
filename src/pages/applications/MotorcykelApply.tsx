@@ -98,7 +98,7 @@ const MotorcykelApply = () => {
         <Card className="bg-card">
           <CardHeader>
             <CardTitle className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
-              <Bike className="w-6 h-6 mr-3 text-primary" />
+              
               Ansøgningsformular
             </CardTitle>
           </CardHeader>
