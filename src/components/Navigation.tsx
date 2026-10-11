@@ -40,8 +40,8 @@ const Navigation = () => {
               className="h-12 w-12 object-contain"
             />
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground">NORDJYSK</span>
-              <span className="text-sm text-primary font-semibold">FIVEPD</span>
+              <span className="text-lg font-bold text-foreground">PROJEKT</span>
+              <span className="text-sm text-primary font-semibold">BLÅ BLINK</span>
             </div>
           </Link>
 
