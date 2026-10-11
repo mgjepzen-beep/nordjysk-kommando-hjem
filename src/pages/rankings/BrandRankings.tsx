@@ -129,7 +129,7 @@ const BrandRankings = () => {
                   <div className="mb-6">
                     <Badge 
                       variant="secondary"
-                      className={`text-lg px-4 py-2 ${
+                      className={`text-sm px-3 py-1 ${
                         unit.color === 'emergency-red' ? 'bg-emergency-red text-emergency-red-foreground' :
                         unit.color === 'emergency-yellow' ? 'bg-emergency-yellow text-emergency-yellow-foreground' :
                         'bg-accent text-accent-foreground'
