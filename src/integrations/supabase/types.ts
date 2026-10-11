@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      application_rate_limits: {
+        Row: {
+          count: number
+          created_at: string
+          key: string
+          updated_at: string
+          window_start: string
+        }
+        Insert: {
+          count?: number
+          created_at?: string
+          key: string
+          updated_at?: string
+          window_start?: string
+        }
+        Update: {
+          count?: number
+          created_at?: string
+          key?: string
+          updated_at?: string
+          window_start?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -63,6 +87,10 @@ export type Database = {
     Functions: {
       can_view_basic_profile: {
         Args: { profile_user_id: string }
+        Returns: boolean
+      }
+      check_application_rate_limit: {
+        Args: { _key: string; _max: number; _window_seconds: number }
         Returns: boolean
       }
     }
