@@ -71,8 +71,7 @@ const Privacy = () => (
         title: "Alder",
         body: (
           <p>
-            Du skal være mindst 16 år for at ansøge. Er du under 15 år, må du ikke give os personoplysninger uden
-            samtykke fra en forælder.
+            Du skal være mindst 16 år for at ansøge. Er du under 16 år, må du ikke sende os personoplysninger.
           </p>
         ),
       },
