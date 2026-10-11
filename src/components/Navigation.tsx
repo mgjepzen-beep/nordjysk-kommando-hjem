@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import {
   HoverCard,
   HoverCardContent,
@@ -21,69 +21,59 @@ const Navigation = () => {
   ];
 
   const rangordenItems = [
-    { path: "/rangorden/politi", label: "POLITI" },
-    { path: "/rangorden/brand", label: "BRAND" },
+    { path: "/rangorden/politi", label: "Politi" },
+    { path: "/rangorden/brand", label: "Brand" },
     { path: "/rangorden/ems", label: "EMS" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const rangordenActive = location.pathname.startsWith("/rangorden");
+
+  const linkClass = (active: boolean) =>
+    `font-medium transition-colors text-sm ${
+      active ? "text-primary" : "text-foreground hover:text-primary"
+    }`;
 
   return (
-    <nav className="bg-card/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-professional">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src={logo} 
-              alt="PROJEKT BLÅ BLINK Logo" 
-              className="h-12 w-12 object-contain"
+    <header className="sticky top-0 z-50 border-b border-border bg-card">
+      <div className="container">
+        <div className="flex h-16 items-center justify-between gap-4">
+          {/* Brand */}
+          <Link to="/" className="flex items-center gap-3">
+            <img
+              src={logo}
+              alt="PROJEKT BLÅ BLINK Logo"
+              className="h-10 w-10 object-contain"
             />
-            <div className="flex flex-col">
-              <span className="text-lg font-bold text-foreground">PROJEKT</span>
-              <span className="text-sm text-primary font-semibold">BLÅ BLINK</span>
-            </div>
+            <span className="font-display text-xl font-semibold uppercase tracking-wide leading-none">
+              Projekt Blå Blink
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex items-center gap-7" aria-label="Hovedmenu">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`font-medium transition-colors hover:text-primary ${
-                  isActive(item.path)
-                    ? "text-primary border-b-2 border-primary pb-1"
-                    : "text-foreground"
-                }`}
-              >
+              <Link key={item.path} to={item.path} className={linkClass(isActive(item.path))}>
                 {item.label}
               </Link>
             ))}
-            
-            {/* Rangorden Dropdown */}
-            <HoverCard openDelay={0} closeDelay={200}>
+
+            <HoverCard openDelay={100} closeDelay={150}>
               <HoverCardTrigger asChild>
-                <button
-                  className={`font-medium transition-colors hover:text-primary flex items-center gap-1 ${
-                    location.pathname.startsWith("/rangorden")
-                      ? "text-primary border-b-2 border-primary pb-1"
-                      : "text-foreground"
-                  }`}
-                >
+                <button className={`${linkClass(rangordenActive)} flex items-center gap-1`}>
                   Rangorden
                   <ChevronDown className="w-4 h-4" />
                 </button>
               </HoverCardTrigger>
-              <HoverCardContent className="w-48 p-2" align="center">
-                <div className="flex flex-col space-y-1">
+              <HoverCardContent className="w-44 p-2" align="center">
+                <div className="flex flex-col">
                   {rangordenItems.map((item) => (
                     <Link
                       key={item.path}
                       to={item.path}
-                      className={`px-3 py-2 rounded-md font-medium transition-colors text-sm ${
+                      className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                         isActive(item.path)
-                          ? "bg-primary text-primary-foreground"
+                          ? "bg-accent text-accent-foreground"
                           : "text-foreground hover:bg-accent hover:text-accent-foreground"
                       }`}
                     >
@@ -95,81 +85,71 @@ const Navigation = () => {
             </HoverCard>
 
             <Link to="/ansog">
-              <Button variant="default" size="sm" className="bg-gradient-hero">
-                <Shield className="w-4 h-4 mr-2" />
-                Ansøg Nu
-              </Button>
+              <Button size="sm">Ansøg</Button>
             </Link>
-            
+
             <UserMenu />
-          </div>
+          </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setIsOpen(!isOpen)}
-              className="p-2"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2"
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Luk menu" : "Åbn menu"}
+          >
+            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile navigation */}
         {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-2">
+          <nav className="md:hidden pb-4" aria-label="Mobilmenu">
+            <div className="flex flex-col divide-y divide-border border-t border-border pt-1">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`py-2 px-4 rounded-md font-medium transition-colors ${
-                    isActive(item.path)
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-accent"
+                  className={`py-3 font-medium text-sm ${
+                    isActive(item.path) ? "text-primary" : "text-foreground"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
-              
-              {/* Mobile Rangorden Section */}
-              <div className="px-4 py-2">
-                <div className="text-sm font-medium text-muted-foreground mb-2">Rangorden</div>
+
+              <div className="py-3">
+                <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
+                  Rangorden
+                </div>
                 {rangordenItems.map((item) => (
                   <Link
                     key={item.path}
                     to={item.path}
                     onClick={() => setIsOpen(false)}
-                    className={`block py-2 px-4 ml-2 rounded-md font-medium transition-colors text-sm ${
-                      isActive(item.path)
-                        ? "bg-primary text-primary-foreground"
-                        : "text-foreground hover:bg-accent"
+                    className={`block py-1.5 pl-3 text-sm ${
+                      isActive(item.path) ? "text-primary" : "text-foreground"
                     }`}
                   >
                     {item.label}
                   </Link>
                 ))}
               </div>
-              
-              <Link to="/ansog">
-                <Button variant="default" size="sm" className="bg-gradient-hero mx-4 mt-2">
-                  <Shield className="w-4 h-4 mr-2" />
-                  Ansøg Nu
-                </Button>
-              </Link>
-              
-              <div className="mx-4 mt-2">
+
+              <div className="flex items-center gap-3 py-3">
+                <Link to="/ansog" onClick={() => setIsOpen(false)}>
+                  <Button size="sm">Ansøg</Button>
+                </Link>
                 <UserMenu />
               </div>
             </div>
-          </div>
+          </nav>
         )}
       </div>
-    </nav>
+    </header>
   );
 };
 

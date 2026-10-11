@@ -192,7 +192,7 @@ const Rankings = () => {
 
   return (
     <div 
-      className="min-h-screen py-20 relative"
+      className="relative py-16 lg:py-24"
       style={{
         backgroundImage: `url(${politiBackground})`,
         backgroundSize: 'cover',
@@ -201,14 +201,12 @@ const Rankings = () => {
       }}
     >
       {/* Background overlay for better readability */}
-      <div className="absolute inset-0 bg-background/15 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/70"></div>
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 px-4 py-2">
-            RANGORDEN & HIERARKI
-          </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">RANGORDEN & HIERARKI</p>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Politi Gradstegn
           </h1>
           <p className="text-xl text-foreground max-w-3xl mx-auto leading-relaxed font-medium">
@@ -219,12 +217,12 @@ const Rankings = () => {
 
         {/* Police Ranks */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Politi Gradstegn
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
             {policeInsigniaGroups.map((group, groupIndex) => (
-              <Card key={groupIndex} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={groupIndex} className="bg-card">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
                     <img 
@@ -265,8 +263,8 @@ const Rankings = () => {
         </div>
 
         {/* Special Units */}
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+        <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -282,12 +280,12 @@ const Rankings = () => {
               
               return (
                 <Link key={index} to={unitRoutes[unit.name]} className="block">
-                  <Card className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300 cursor-pointer hover-scale">
+                  <Card className="bg-card text-center  cursor-pointer ">
                     <CardContent className="pt-8 pb-8">
                       <div className="mb-6">
                         <Badge 
                           variant="secondary"
-                         className={`text-lg px-4 py-2 ${
+                         className={`text-sm px-3 py-1 ${
                             unit.color === 'emergency-red' ? 'bg-emergency-red text-emergency-red-foreground' :
                             unit.color === 'emergency-yellow' ? 'bg-emergency-yellow text-emergency-yellow-foreground' :
                             'bg-accent text-accent-foreground'
@@ -308,10 +306,10 @@ const Rankings = () => {
 
         {/* Information Box */}
         <div className="mt-16">
-          <Card className="border-none shadow-emergency bg-gradient-hero text-primary-foreground">
+          <Card className="bg-card">
             <CardContent className="p-8 text-center">
               <Shield className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Forfremmelse System</h3>
+              <h3 className="font-display text-2xl font-semibold uppercase tracking-wide mb-4">Forfremmelse System</h3>
               <p className="text-lg leading-relaxed opacity-95">
                 Forfremmelser er baseret på erfaring, dedikation, lederegenskaber og bidrag til communityet. 
                 Alle medlemmer har mulighed for at avancere gennem rankerne ved at vise professionalisme 

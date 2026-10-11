@@ -5,12 +5,14 @@
 - Slogans uden region ("Nordjylland" fjernet fra teksten).
 - Sikkerhedsrettelser 1–5 fra gennemgangen (adgang til data, formularkontrol, forældede pakker, fejlbeskeder, rättigheder).
 - Privatlivspolitik og vilkår oprettet og linket i sidefoden.
+- Teksten "Egne billeder som er blevet ingame" rettet på vilkårssiden.
+- Knappen "Lær mere om os" på forsiden erstattet af et tydeligt link i nyt design.
+- Designopfriskning: ny typografi (Barlow/Barlow Condensed), dæmpet farvepalet, gradients/skygger/hover-effekter fjernet, fup-statistikker og "24/7 support" fjernet, alle sider gennemgået.
+- Syntaxfejl i ansøgningssiden rettet og alle sider tjekket visuelt i browseren (forside, om os, rekruttering, ansøgning, rangorden, enhed, enhedsansøgning, vilkår).
 
 ## Åbent — venter på dig
 - Slå e-mail oprettelse fra i din Supabase dashboard (kan ikke ændres herfra).
 - Send én testansøgning, så vi kan bekræfte at beskeder kommer frem til Discord.
-- Ret teksten "Egne billeder som er blevet ingame" på vilkårssiden — mangler et udsagnsord.
-- Knappen "Lær mere om os" i forsiden: hvid tekst på næsten hvid baggrund, næsten ulæselig.
 - Domænerne hedder stadig nordjyskfivepd.com / .info — nyt domæne er din beslutning.
 
 ## Bemærk

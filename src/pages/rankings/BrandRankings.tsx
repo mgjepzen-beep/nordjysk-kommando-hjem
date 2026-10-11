@@ -64,14 +64,12 @@ const BrandRankings = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="container px-4 py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 px-4 py-2">
-            RANGORDEN & HIERARKI
-          </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">RANGORDEN & HIERARKI</p>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Brand Rangorden
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -82,16 +80,16 @@ const BrandRankings = () => {
 
         {/* Brand Ranks */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Brand Rangorden
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {brandRanks.map((rank, index) => (
-              <Card key={index} className="border-none shadow-professional hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="bg-card">
                 <CardHeader className="pb-4">
                   <div className="flex flex-col items-center text-center mb-4">
-                    <div className="w-16 h-16 bg-gradient-to-br from-emergency-red to-emergency-yellow rounded-full flex items-center justify-center mb-4">
-                      <Flame className="w-8 h-8 text-white" />
+                    <div className="w-14 h-14 bg-emergency-red/10 rounded-full flex items-center justify-center mb-4">
+                      <Flame className="w-8 h-8 text-foreground" />
                     </div>
                     <CardTitle className="text-lg mb-2">{rank.rank}</CardTitle>
                     <div className="flex items-center">
@@ -120,18 +118,18 @@ const BrandRankings = () => {
         </div>
 
         {/* Special Units */}
-        <div className="bg-card/50 rounded-2xl p-8 lg:p-12">
-          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+        <div className="bg-muted/60 rounded-2xl p-8 lg:p-12">
+          <h2 className="font-display text-3xl font-semibold uppercase tracking-wide text-foreground mb-8">
             Specialenheder
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {brandUnits.map((unit, index) => (
-              <Card key={index} className="border-none shadow-professional text-center hover:shadow-emergency transition-all duration-300">
+              <Card key={index} className="text-center ">
                 <CardContent className="pt-8 pb-8">
                   <div className="mb-6">
                     <Badge 
                       variant="secondary"
-                      className={`text-lg px-4 py-2 ${
+                      className={`text-sm px-3 py-1 ${
                         unit.color === 'emergency-red' ? 'bg-emergency-red text-emergency-red-foreground' :
                         unit.color === 'emergency-yellow' ? 'bg-emergency-yellow text-emergency-yellow-foreground' :
                         'bg-accent text-accent-foreground'
@@ -150,10 +148,10 @@ const BrandRankings = () => {
 
         {/* Information Box */}
         <div className="mt-16">
-          <Card className="border-none shadow-emergency bg-gradient-to-br from-emergency-red to-emergency-yellow text-white">
+          <Card className="bg-card">
             <CardContent className="p-8 text-center">
               <Flame className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4">Brandvæsenets Mission</h3>
+              <h3 className="font-display text-2xl font-semibold uppercase tracking-wide mb-4">Brandvæsenets Mission</h3>
               <p className="text-lg leading-relaxed opacity-95">
                 At beskytte liv, ejendom og miljø gennem professionel brandbekæmpelse, redning og forebyggelse. 
                 Vores team er trænet til at håndtere alle former for nødsituationer med hurtig respons og ekspertise.

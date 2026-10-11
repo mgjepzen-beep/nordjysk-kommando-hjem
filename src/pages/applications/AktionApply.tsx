@@ -4,8 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Target, Send } from "lucide-react";
+import { ArrowLeft, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -111,7 +110,7 @@ const AktionApply = () => {
   };
 
   return (
-    <div className="min-h-screen py-20">
+    <div className="container px-4 py-16 lg:py-24">
       <div className="container mx-auto px-4 max-w-4xl">
         {/* Back Button */}
         <div className="mb-8">
@@ -124,24 +123,22 @@ const AktionApply = () => {
         </div>
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-primary text-primary-foreground">
-            AKS - ANSØGNING
-          </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+        <header className="mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">AKS - ANSØGNING</p>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Ansøg til Aktions Styrken
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
             Udfyld formularen nedenfor for at ansøge om at blive del af vores elite Aktions Styrke. 
             Dette er vores mest krævende position og kræver exceptionelle kvalifikationer.
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
-        <Card className="border-none shadow-professional">
+        <Card className="bg-card">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center">
-              <Target className="w-6 h-6 mr-3 text-primary" />
+            <CardTitle className="font-display text-2xl font-semibold uppercase tracking-wide text-foreground">
+              
               Ansøgningsformular
             </CardTitle>
           </CardHeader>
@@ -276,7 +273,7 @@ const AktionApply = () => {
                   type="submit" 
                   size="lg" 
                   disabled={isSubmitting}
-                  className="bg-gradient-hero shadow-emergency text-lg px-12"
+                  className="text-lg px-12"
                 >
                   {isSubmitting ? (
                     "Sender..."

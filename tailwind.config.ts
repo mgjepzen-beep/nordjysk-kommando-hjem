@@ -7,12 +7,16 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "1.5rem",
       screens: {
-        "2xl": "1400px",
+        "2xl": "1200px",
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        display: ["var(--font-display)"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -69,14 +73,9 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
-      backgroundImage: {
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-emergency": "var(--gradient-emergency)",
-        "gradient-subtle": "var(--gradient-subtle)",
-      },
       boxShadow: {
-        professional: "var(--shadow-professional)",
-        emergency: "var(--shadow-emergency)",
+        card: "var(--shadow-card)",
+        raise: "var(--shadow-raise)",
       },
       borderRadius: {
         lg: "var(--radius)",

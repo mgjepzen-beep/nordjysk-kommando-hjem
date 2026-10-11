@@ -5,9 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge } from "@/components/ui/badge";
 import { useState, useEffect } from "react";
-import { CheckCircle, FileText, User, Mail, Phone, Calendar } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useSearchParams } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
@@ -107,25 +105,23 @@ const Apply = () => {
   ];
 
   return (
-    <div className="min-h-screen py-20">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4 px-4 py-2">
-            ANSØGNING
-          </Badge>
-          <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Bliv En Del Af Teamet
+    <div className="container px-4 py-16 lg:py-24 max-w-3xl">
+        <header className="mb-12">
+          <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+            Ansøgning
+          </p>
+          <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none mb-4">
+            Bliv en del af teamet
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground leading-relaxed">
             Udfyld ansøgningsformularen nedenfor for at starte din rejse hos PROJEKT BLÅ BLINK
           </p>
-        </div>
+        </header>
 
         {/* Application Form */}
-        <Card className="border-none shadow-professional">
+        <Card className="bg-card">
           <CardHeader>
-            <CardTitle className="text-2xl flex items-center gap-2">
-              <FileText className="w-6 h-6 text-primary" />
+            <CardTitle className="font-display text-2xl font-semibold uppercase tracking-wide">
               Ansøgningsformular
             </CardTitle>
           </CardHeader>
@@ -133,9 +129,8 @@ const Apply = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Personal Information */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <User className="w-5 h-5 text-primary" />
-                  Personlige Oplysninger
+                <h3 className="font-semibold text-foreground">
+                  Personlige oplysninger
                 </h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -168,8 +163,7 @@ const Apply = () => {
 
               {/* Contact Information */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-primary" />
+                <h3 className="font-semibold text-foreground">
                   Kontaktoplysninger
                 </h3>
                 
@@ -212,9 +206,8 @@ const Apply = () => {
 
               {/* Position & Experience */}
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-primary" />
-                  Stilling & Erfaring
+                <h3 className="font-semibold text-foreground">
+                  Stilling & erfaring
                 </h3>
                 
                 <div className="space-y-2">
@@ -284,10 +277,9 @@ const Apply = () => {
               <Button 
                 type="submit" 
                 size="lg" 
-                className="w-full bg-gradient-emergency shadow-emergency text-lg"
+                className="w-full text-base"
                 disabled={isLoading}
               >
-                <CheckCircle className="w-5 h-5 mr-2" />
                 {isLoading ? "Sender..." : "Send Ansøgning"}
               </Button>
             </form>
@@ -295,9 +287,9 @@ const Apply = () => {
         </Card>
 
         {/* Next Steps */}
-        <Card className="mt-8 border-none shadow-professional bg-card/50">
+        <Card className="mt-8 bg-muted/60">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-foreground mb-4">Hvad sker der nu?</h3>
+            <h3 className="font-semibold text-foreground mb-4">Hvad sker der nu?</h3>
             <div className="space-y-2 text-muted-foreground">
               <p>1. Vi gennemgår din ansøgning (24-48 timer)</p>
               <p>2. Du bliver kontaktet på Discord for et interview</p>
@@ -306,7 +298,6 @@ const Apply = () => {
             </div>
           </CardContent>
         </Card>
-      </div>
     </div>
   );
 };
