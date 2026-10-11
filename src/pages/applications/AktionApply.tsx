@@ -125,9 +125,7 @@ const AktionApply = () => {
 
         {/* Header */}
         <header className="mb-10">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-primary text-foreground">
-            AKS - ANSØGNING
-          </Badge>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">AKS - ANSØGNING</p>
           <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Ansøg til Aktions Styrken
           </h1>

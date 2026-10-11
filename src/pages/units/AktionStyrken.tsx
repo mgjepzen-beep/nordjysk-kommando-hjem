@@ -55,9 +55,7 @@ const AktionStyrken = () => {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-primary text-foreground">
-            AKS
-          </Badge>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">AKS</p>
           <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Aktions Styrken
           </h1>

@@ -82,9 +82,7 @@ const MotorcykelApply = () => {
 
         {/* Header */}
         <header className="mb-10">
-          <Badge variant="secondary" className="mb-4 px-4 py-2 bg-accent text-accent-foreground">
-            MIKE - ANSØGNING
-          </Badge>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">MIKE - ANSØGNING</p>
           <h1 className="font-display text-4xl lg:text-5xl font-semibold uppercase tracking-wide leading-none text-foreground mb-5">
             Ansøg til Motorcykel Betjent
           </h1>
