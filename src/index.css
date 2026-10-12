@@ -143,51 +143,29 @@
   }
 }
 
-/* The signature "Blå Blink" strobe: a double flash like a Danish blue
-   emergency light — two short blue flashes, then a pause. Colour only,
-   no glow, no scale. Disabled automatically by the reduced-motion rule above. */
+/* The signature "Blå Blink" strobe in the header: a slow double flash like a
+   Danish blue emergency light — two long blue flashes, then a pause. Colour
+   only, no glow, no scale. Disabled automatically by the reduced-motion rule. */
 @keyframes blink-blue {
-  0%, 14% {
+  0%, 20% {
     color: hsl(var(--primary));
   }
-  15%, 29% {
+  21%, 40% {
     color: hsl(var(--blink));
   }
-  30%, 36% {
+  41%, 50% {
     color: hsl(var(--primary));
   }
-  37%, 51% {
+  51%, 70% {
     color: hsl(var(--blink));
   }
-  52%, 100% {
+  71%, 100% {
     color: hsl(var(--primary));
-  }
-}
-
-@keyframes blink-blue-hero {
-  0%, 14% {
-    color: hsl(0 0% 100%);
-  }
-  15%, 29% {
-    color: hsl(var(--blink));
-  }
-  30%, 36% {
-    color: hsl(0 0% 100%);
-  }
-  37%, 51% {
-    color: hsl(var(--blink));
-  }
-  52%, 100% {
-    color: hsl(0 0% 100%);
   }
 }
 
 @layer utilities {
   .blink-accent {
-    animation: blink-blue 4.8s steps(1, end) infinite;
-  }
-
-  .blink-accent-hero {
-    animation: blink-blue-hero 4.8s steps(1, end) infinite;
+    animation: blink-blue 8s steps(1, end) infinite;
   }
 }
