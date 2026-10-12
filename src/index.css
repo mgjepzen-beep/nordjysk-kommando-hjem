@@ -21,6 +21,9 @@
     --primary: 214 78% 30%;
     --primary-foreground: 0 0% 100%;
 
+    /* Bright blue used by the "Blink" pulse accent */
+    --blink: 214 95% 62%;
+
     /* Unit identifiers */
     --emergency-red: 0 62% 42%;
     --emergency-red-foreground: 0 0% 100%;
@@ -137,5 +140,37 @@
 
   ::selection {
     @apply bg-primary/90 text-primary-foreground;
+  }
+}
+
+/* The signature "Blå Blink" pulse: a slow, restrained colour shift only —
+   no glow, no scale. Disabled automatically by the reduced-motion rule above. */
+@keyframes blink-blue {
+  0%,
+  100% {
+    color: hsl(var(--primary));
+  }
+  50% {
+    color: hsl(var(--blink));
+  }
+}
+
+@keyframes blink-blue-hero {
+  0%,
+  100% {
+    color: hsl(0 0% 100%);
+  }
+  50% {
+    color: hsl(var(--blink));
+  }
+}
+
+@layer utilities {
+  .blink-accent {
+    animation: blink-blue 3.2s ease-in-out infinite;
+  }
+
+  .blink-accent-hero {
+    animation: blink-blue-hero 3.2s ease-in-out infinite;
   }
 }

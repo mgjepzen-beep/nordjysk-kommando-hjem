@@ -59,7 +59,7 @@ const Home = () => {
               className="h-16 w-16 lg:h-20 lg:w-20 object-contain mb-8"
             />
             <h1 className="font-display text-6xl lg:text-8xl font-semibold uppercase leading-none tracking-wide text-white">
-              Projekt Blå Blink
+              Projekt Blå <span className="blink-accent-hero">Blink</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg lg:text-xl text-white/90 leading-relaxed">
               Et professionelt emergency services community. Vi tilbyder politi,

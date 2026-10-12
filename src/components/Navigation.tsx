@@ -46,7 +46,7 @@ const Navigation = () => {
               className="h-10 w-10 object-contain"
             />
             <span className="font-display text-xl font-semibold uppercase tracking-wide leading-none">
-              Projekt Blå Blink
+              Projekt Blå <span className="blink-accent">Blink</span>
             </span>
           </Link>
 
