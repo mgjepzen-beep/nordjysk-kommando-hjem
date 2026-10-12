@@ -147,47 +147,47 @@
    emergency light — two short blue flashes, then a pause. Colour only,
    no glow, no scale. Disabled automatically by the reduced-motion rule above. */
 @keyframes blink-blue {
-  0%, 6% {
+  0%, 14% {
     color: hsl(var(--primary));
   }
-  7%, 14% {
+  15%, 29% {
     color: hsl(var(--blink));
   }
-  15%, 20% {
+  30%, 36% {
     color: hsl(var(--primary));
   }
-  21%, 28% {
+  37%, 51% {
     color: hsl(var(--blink));
   }
-  29%, 100% {
+  52%, 100% {
     color: hsl(var(--primary));
   }
 }
 
 @keyframes blink-blue-hero {
-  0%, 6% {
+  0%, 14% {
     color: hsl(0 0% 100%);
   }
-  7%, 14% {
+  15%, 29% {
     color: hsl(var(--blink));
   }
-  15%, 20% {
+  30%, 36% {
     color: hsl(0 0% 100%);
   }
-  21%, 28% {
+  37%, 51% {
     color: hsl(var(--blink));
   }
-  29%, 100% {
+  52%, 100% {
     color: hsl(0 0% 100%);
   }
 }
 
 @layer utilities {
   .blink-accent {
-    animation: blink-blue 2.4s steps(1, end) infinite;
+    animation: blink-blue 4.8s steps(1, end) infinite;
   }
 
   .blink-accent-hero {
-    animation: blink-blue-hero 2.4s steps(1, end) infinite;
+    animation: blink-blue-hero 4.8s steps(1, end) infinite;
   }
 }
