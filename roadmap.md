@@ -11,6 +11,7 @@
 - Syntaxfejl i ansøgningssiden rettet og alle sider tjekket visuelt i browseren (forside, om os, rekruttering, ansøgning, rangorden, enhed, enhedsansøgning, vilkår).
 
 ## Åbent — venter på dig
+- Discord-link: din besked stoppede ved "https://discord.gg/" — send det fulde link, og sig hvor det skal vises.
 - Slå e-mail oprettelse fra i din Supabase dashboard (kan ikke ændres herfra).
 - Send én testansøgning, så vi kan bekræfte at beskeder kommer frem til Discord.
 - Domænerne hedder stadig nordjyskfivepd.com / .info — nyt domæne er din beslutning.
