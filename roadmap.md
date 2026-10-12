@@ -9,6 +9,7 @@
 - Knappen "Lær mere om os" på forsiden erstattet af et tydeligt link i nyt design.
 - Designopfriskning: ny typografi (Barlow/Barlow Condensed), dæmpet farvepalet, gradients/skygger/hover-effekter fjernet, fup-statistikker og "24/7 support" fjernet, alle sider gennemgået.
 - Syntaxfejl i ansøgningssiden rettet og alle sider tjekket visuelt i browseren (forside, om os, rekruttering, ansøgning, rangorden, enhed, enhedsansøgning, vilkår).
+- Blåt blink kun i menuen: "Blå Blink" skifter til lyst blåt to gange ad gangen (ca. 1,5 sek. ad gangen) og slukker så i ca. 3 sek. — kun farve, ingen glød eller bevægelse. Overskriften på forsiden blinker ikke.
 
 ## Åbent — venter på dig
 - Discord-link: din besked stoppede ved "https://discord.gg/" — send det fulde link, og sig hvor det skal vises.
