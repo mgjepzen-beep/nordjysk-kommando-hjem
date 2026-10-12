@@ -12,6 +12,7 @@ import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Admin from "./pages/Admin";
 
 // Ranking pages
 import PolitiRankings from "./pages/rankings/PolitiRankings";
@@ -77,6 +78,7 @@ const App = () => {
               <Route path="/ansog/aktions-styrken" element={<AktionApply />} />
               <Route path="/privatlivspolitik" element={<Privacy />} />
               <Route path="/vilkaar" element={<Terms />} />
+              <Route path="/kontrolpanel" element={<Admin />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
