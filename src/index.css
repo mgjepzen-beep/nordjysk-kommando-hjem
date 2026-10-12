@@ -143,34 +143,51 @@
   }
 }
 
-/* The signature "Blå Blink" pulse: a slow, restrained colour shift only —
+/* The signature "Blå Blink" strobe: a double flash like a Danish blue
+   emergency light — two short blue flashes, then a pause. Colour only,
    no glow, no scale. Disabled automatically by the reduced-motion rule above. */
 @keyframes blink-blue {
-  0%,
-  100% {
+  0%, 6% {
     color: hsl(var(--primary));
   }
-  50% {
+  7%, 14% {
     color: hsl(var(--blink));
+  }
+  15%, 20% {
+    color: hsl(var(--primary));
+  }
+  21%, 28% {
+    color: hsl(var(--blink));
+  }
+  29%, 100% {
+    color: hsl(var(--primary));
   }
 }
 
 @keyframes blink-blue-hero {
-  0%,
-  100% {
+  0%, 6% {
     color: hsl(0 0% 100%);
   }
-  50% {
+  7%, 14% {
     color: hsl(var(--blink));
+  }
+  15%, 20% {
+    color: hsl(0 0% 100%);
+  }
+  21%, 28% {
+    color: hsl(var(--blink));
+  }
+  29%, 100% {
+    color: hsl(0 0% 100%);
   }
 }
 
 @layer utilities {
   .blink-accent {
-    animation: blink-blue 3.2s ease-in-out infinite;
+    animation: blink-blue 2.4s steps(1, end) infinite;
   }
 
   .blink-accent-hero {
-    animation: blink-blue-hero 3.2s ease-in-out infinite;
+    animation: blink-blue-hero 2.4s steps(1, end) infinite;
   }
 }
