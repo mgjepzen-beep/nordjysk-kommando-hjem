@@ -3,6 +3,7 @@ import { Shield, Users, Trophy, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import heroBackground from "@/assets/hero-background.png";
+import DiscordStatus, { DISCORD_URL } from "@/components/DiscordStatus";
 
 const Home = () => {
   const services = [
@@ -146,14 +147,15 @@ const Home = () => {
               <h2 className="font-display text-3xl font-semibold uppercase tracking-wide mb-4">
                 Kom i kontakt med os
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed mb-4">
                 Det meste af vores aktivitet foregår på vores Discord server —
                 spørgsmål, ansøgninger og alle beskeder om serveren samles der.
               </p>
+              <DiscordStatus />
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
               <a
-                href="https://discord.gg/BHev4WJf"
+                href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
