@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DiscordStatus from "@/components/DiscordStatus";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card mt-20">
@@ -11,6 +12,9 @@ const Footer = () => (
           Fiktivt rollespilsfællesskab i FiveM. Ikke tilknyttet offentlige
           myndigheder eller Rockstar Games.
         </p>
+        <div className="mt-4">
+          <DiscordStatus />
+        </div>
       </div>
       <nav className="flex gap-6" aria-label="Sidefod">
         <Link to="/privatlivspolitik" className="hover:text-foreground transition-colors">
