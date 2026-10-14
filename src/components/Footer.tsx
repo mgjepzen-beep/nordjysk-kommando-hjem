@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DiscordStatus from "@/components/DiscordStatus";
 
 const Footer = () => (
   <footer className="border-t border-border bg-card mt-20">
