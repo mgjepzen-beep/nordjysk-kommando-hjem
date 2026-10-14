@@ -55,6 +55,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     
     if (error) {
       console.error('Error logging in with Discord:', error.message);
+      toast.error('Login mislykkedes', {
+        description: `Kunne ikke åbne Discord-login: ${error.message}`,
+      });
     }
   };
 
