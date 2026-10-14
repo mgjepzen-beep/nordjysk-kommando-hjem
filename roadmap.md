@@ -12,6 +12,7 @@
 - Blåt blink kun i menuen: "Blå Blink" skifter til lyst blåt to gange ad gangen (ca. 1,5 sek. ad gangen) og slukker så i ca. 3 sek. — kun farve, ingen glød eller bevægelse. Overskriften på forsiden blinker ikke.
 - Nyt Discord-link i brug (https://discord.gg/C5EQMTGJPT); tæller over online/medlemmer hentes fra Discord hvert minut.
 - Medlemstælleren vises i sidefoden på alle sider (også ansøgningssiden), ikke kun på forsiden.
+- Tælleren hentes nu via en egen serverfunktion (discord-status), fordi browseren blokerede det direkte kald til Discord.
 
 ## Åbent — venter på dig
 - Slå e-mail oprettelse fra i din Supabase dashboard (kan ikke ændres herfra).

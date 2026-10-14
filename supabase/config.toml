@@ -2,3 +2,6 @@ project_id = "cajpphadwotolpjizrfw"
 
 [functions.submit-general-application]
 verify_jwt = false
+
+[functions.discord-status]
+verify_jwt = false
