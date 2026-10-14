@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const DISCORD_INVITE = "yKjacqBcEt";
+export const DISCORD_INVITE = "C5EQMTGJPT";
 export const DISCORD_URL = `https://discord.gg/${DISCORD_INVITE}`;
 
 type Counts = { online: number; members: number };
